@@ -1,0 +1,1 @@
+export const sexualBlue = '#284B63';

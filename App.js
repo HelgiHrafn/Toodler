@@ -6,6 +6,8 @@ export default function App() {
     <View style={styles.container}>
       <Text style={styles.whiteBig}>Welcome to Toodler!</Text>
       <Text style={styles.whiteMed}>Only for cool people</Text>
+      <Text style={styles.whiteMed}>Only for cool people</Text>
+      <Text style={styles.whiteMed}>Only for cool people</Text>
       <StatusBar style="auto" />
       
     </View>
