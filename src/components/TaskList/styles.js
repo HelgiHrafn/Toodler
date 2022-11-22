@@ -1,7 +1,7 @@
 import { StyleSheet } from 'react-native'
 export default StyleSheet.create({
     h3: {
-      fontSize: 20,
+      fontSize: 25,
       fontFamily: 'Futura',
       maxWidth: '65%',
       maxHeight: '100%',
@@ -24,7 +24,7 @@ export default StyleSheet.create({
         display: 'flex',
         flexDirection: 'row',
         alignItems: 'center',
-        height: 50
+        height: 70,
     }
   })
   

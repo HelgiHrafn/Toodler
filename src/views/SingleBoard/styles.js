@@ -7,10 +7,10 @@ export default StyleSheet.create({
         paddingHorizontal: 10,
         paddingVertical: 10,
         borderRadius: 15,
-        marginVertical: 5,
+        marginTop: '15%',
         marginHorizontal: 10,
         display: 'flex',
-        minHeight: '73%'
+        minHeight: '80%'
 
     },
     coolShadow: {

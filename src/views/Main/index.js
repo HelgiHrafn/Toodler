@@ -12,8 +12,8 @@ const Boards = () => {
         <View>
             <Toolbar />
             <Text style={styles.h1}>Toodler</Text>
-            <Board board={data.boards[0]}></Board>
-            {/* <BoardList boards={data.boards} /> */}
+            {/* <Board board={data.boards[0]}></Board> */}
+            <BoardList boards={data.boards} />
         </View>
   )
 }
