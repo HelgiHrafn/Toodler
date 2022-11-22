@@ -1,24 +1,25 @@
 import { StyleSheet } from 'react-native';
-import { celadon } from '../../styles/colors';
+import { uranianBlue } from '../../styles/colors';
 
 export default StyleSheet.create({
     toolbar: {
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'center',
-        height: 80,
-        backgroundColor: celadon
+        height: 120,
+        backgroundColor: uranianBlue,
 
     },
     toolbarAction: {
         flex: 1,
-        marginTop: 20,
+        marginTop: 50,
         alignItems: 'center'
     },
     toolbarActionText: {
         fontWeight: 'bold',
         color: 'black',
-        fontSize: 16
+        fontSize: 16,
+        fontFamily: 'Futura'
 
     }
 

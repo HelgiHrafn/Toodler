@@ -6,7 +6,7 @@ export default StyleSheet.create({
     fontSize: 60,
     fontFamily: 'Futura',
     marginHorizontal: 20,
-    marginTop: 50
+    marginTop: 20
   }
 
 })
