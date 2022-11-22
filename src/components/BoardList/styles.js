@@ -2,8 +2,14 @@ import {StyleSheet} from 'react-native';
 
 export default StyleSheet.create({
     boardList: {
-        margin: 10,
-        justifyContent: 'center'
+        marginHorizontal: 10,
+        justifyContent: 'center',
+        height: '100%'
+    },
+    h1: {
+        fontSize: 40,
+        fontFamily: 'Futura',
+        padding: 10,
     }
 
 });

@@ -5,7 +5,7 @@ import BoardSmall from '../BoardSmall';
 
 const BoardList = ({boards}) => (
     <View style={styles.boardList}>
-        <Text>BoardList</Text>
+        <Text style={styles.h1}>Boards</Text>
         <FlatList
             numColumns={1}
             data={boards}
