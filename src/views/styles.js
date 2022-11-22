@@ -1,1 +1,0 @@
-const okok = 2;
