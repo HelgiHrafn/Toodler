@@ -1,7 +1,6 @@
 import { StyleSheet } from 'react-native'
 
 export default StyleSheet.create({
-<<<<<<< HEAD
     boardList: {
         marginHorizontal: 10,
         justifyContent: 'center',
@@ -12,11 +11,5 @@ export default StyleSheet.create({
         fontFamily: 'Futura',
         padding: 10,
     }
-=======
-  boardList: {
-    margin: 10,
-    justifyContent: 'center'
-  }
->>>>>>> main
 
 })
