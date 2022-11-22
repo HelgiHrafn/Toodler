@@ -1,1 +1,1 @@
-const okok = 2;
+const okok = 2
