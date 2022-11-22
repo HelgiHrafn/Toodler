@@ -11,14 +11,10 @@ const BoardList = ({ boards }) => (
             numColumns={1}
             data={boards}
             renderItem={({ item: { name, thumbnailPhoto } }) => {
-              console.log(name)
-              console.log(thumbnailPhoto)
               return (
-
                     <BoardSmall
                         name={name}
                         thumbnailPhoto={thumbnailPhoto} />
-
               )
             }}
             keyExtractor={board => board.id}
