@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React from 'react'
 import { View, FlatList, Text } from 'react-native'
 import styles from './styles'

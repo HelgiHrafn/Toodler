@@ -5,10 +5,10 @@ import data from '../../resources/data.json'
 import styles from './styles'
 
 const Boards = () => {
-    return (
+  return (
         <View>
             <Text style={styles.h1}>Toodler</Text>
-            
+
             <BoardList boards={data.boards} />
         </View>
   )
