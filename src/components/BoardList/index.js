@@ -3,7 +3,7 @@ import React from 'react'
 import { View, FlatList, Text } from 'react-native'
 import styles from './styles'
 import BoardSmall from '../BoardSmall'
-console.log("print")
+
 const BoardList = ({ boards }) => (
     <View style={styles.boardList}>
         <Text style={styles.h1}>Boards</Text>
