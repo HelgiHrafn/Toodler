@@ -34,6 +34,9 @@ export default StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     minHeight: 70
-    
+  },
+  touchable: {
+    activeOpacity: 0.6,
+    underlayColor: '#FFF'
   }
 })

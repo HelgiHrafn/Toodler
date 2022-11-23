@@ -35,5 +35,9 @@ export default StyleSheet.create({
     },
     shadowRadius: 3
 
+  },
+  touchable: {
+    activeOpacity: 0.6,
+    underlayColor: '#FFF'
   }
 })

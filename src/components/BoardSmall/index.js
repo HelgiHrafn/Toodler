@@ -6,7 +6,7 @@ import styles from './styles'
 const BoardSmall = ({ board, navigation }) => {
   return (
 
-        <TouchableHighlight activeOpacity={0.6} underlayColor="#FFF"onPress={() => navigation.navigate('Board', { board })}>
+        <TouchableHighlight style={styles.touchable} onPress={() => navigation.navigate('Board', { board })}>
           <View style={[styles.boardSmall, styles.coolShadow]}>
             <Text style={styles.name}>{board.name}</Text>
             <Image
