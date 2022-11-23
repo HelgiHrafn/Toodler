@@ -10,7 +10,7 @@ export default StyleSheet.create({
     marginHorizontal: 10,
     marginTop: 10,
     display: 'flex',
-    minHeight: '80%'
+    maxHeight: '80%'
 
   },
   coolShadow: {
@@ -27,5 +27,9 @@ export default StyleSheet.create({
     fontSize: 30,
     fontFamily: 'Futura',
     margin: 20
+  },
+  main: {
+    backgroundColor: 'white',
+    minHeight: '100%'
   }
 })

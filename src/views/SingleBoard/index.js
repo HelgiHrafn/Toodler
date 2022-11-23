@@ -9,7 +9,7 @@ const Board = ({ navigation, route }) => {
   const lists = data.lists
 
   return (
-        <View>
+        <View style={styles.main}>
         <ListToolbar />
         <View style={[styles.boardBig, styles.coolShadow]}>
             

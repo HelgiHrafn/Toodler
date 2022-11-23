@@ -3,11 +3,14 @@ import { View, Text, FlatList } from 'react-native'
 import data from '../../resources/data.json'
 import styles from './styles'
 import Task from '../../components/Task'
+import ListToolbar from '../../components/Toolbar/listToolbar'
 
 const List = ({ navigation, route }) => {
   const tasks = data.tasks
 
   return (
+        <View style={styles.main}>
+        <ListToolbar />
         <View style={[styles.listBig, styles.coolShadow]}>
             <Text style={styles.h2}>{route.params.list.name}</Text>
             <FlatList
@@ -21,6 +24,7 @@ const List = ({ navigation, route }) => {
                 }}
                 keyExtractor={task => task.id}
             />
+        </View>
         </View>
   )
 }

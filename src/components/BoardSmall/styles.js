@@ -20,7 +20,7 @@ export default StyleSheet.create({
     paddingVertical: 10,
     borderRadius: 15,
     marginVertical: 5,
-    marginHorizontal: 10,
+    marginHorizontal: 5,
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'space-between'

@@ -9,7 +9,29 @@ export default StyleSheet.create({
     marginTop: 5
   },
   main: {
-    backgroundColor: 'white'
+    backgroundColor: 'white',
+    height: '100%'
+  },
+  boardBig: {
+    backgroundColor: 'white',
+    paddingHorizontal: 10,
+    paddingVertical: 10,
+    borderRadius: 15,
+    marginHorizontal: 10,
+    marginVertical: 10,
+    display: 'flex',
+    height: '77%'
+
+  },
+  coolShadow: {
+    shadowColor: '#171717',
+    shadowOpacity: 0.25,
+    shadowOffset: {
+      width: -2,
+      height: 4
+    },
+    shadowRadius: 3
+
   }
 
 })

@@ -11,7 +11,10 @@ const Boards = ({ navigation }) => {
             <Toolbar />
             <Text style={styles.h1}>Toodler</Text>
             {/* <Board board={data.boards[0]}></Board> */}
+            <View style={[styles.boardBig, styles.coolShadow]}>
             <BoardList boards={data.boards} navigation={navigation}/>
+
+            </View>
         </View>
   )
 }

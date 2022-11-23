@@ -27,5 +27,9 @@ export default StyleSheet.create({
     fontSize: 30,
     fontFamily: 'Futura',
     margin: 20
+  },
+  main: {
+    backgroundColor: 'white',
+    minHeight: '100%'
   }
 })
