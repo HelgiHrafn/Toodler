@@ -5,7 +5,7 @@ import styles from './styles'
 import BoardSmall from '../BoardSmall'
 
 const BoardList = ({ boards, navigation }) => (
-    <View style={styles.boardList}>
+    <View style={[styles.boardBig, styles.coolShadow]}>
         <Text style={styles.h1}>Boards</Text>
         <FlatList
             numColumns={1}
