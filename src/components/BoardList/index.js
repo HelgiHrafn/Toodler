@@ -10,11 +10,10 @@ const BoardList = ({ boards }) => (
         <FlatList
             numColumns={1}
             data={boards}
-            renderItem={({ item: { name, thumbnailPhoto } }) => {
+            renderItem={({ item }) => {
               return (
                     <BoardSmall
-                        name={name}
-                        thumbnailPhoto={thumbnailPhoto} />
+                        board={item} />
               )
             }}
             keyExtractor={board => board.id}
