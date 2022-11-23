@@ -7,13 +7,14 @@ import styles from './styles'
 import Board from '../SingleBoard'
 
 
-const Boards = () => {
+const Boards = ({ navigation }) => {
+  
   return (
         <View>
             <Toolbar />
             <Text style={styles.h1}>Toodler</Text>
             {/* <Board board={data.boards[0]}></Board> */}
-            <BoardList boards={data.boards} />
+            <BoardList boards={data.boards} navigation={navigation}/>
         </View>
   )
 }

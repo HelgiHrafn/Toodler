@@ -5,11 +5,12 @@ import styles from './styles'
 
 const BoardSmall = ({ board, navigation }) => {
   return (
-        <TouchableHighlight onPress={() => navigation.navigate('Board', {board: board})}>
+        
+        <TouchableHighlight onPress={() => navigation.navigate('Board', {board})}>
           <View style={[styles.boardSmall, styles.coolShadow]}>
             <Text style={styles.name}>{board.name}</Text>
             <Image
-                style={styles.image}z
+                style={styles.image}
                 resizeMode="cover"
                 source={{ uri: board.thumbnailPhoto }}
             />
