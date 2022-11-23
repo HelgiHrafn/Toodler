@@ -6,13 +6,12 @@ import TaskList from '../../components/TaskList'
 import ListToolbar from '../../components/Toolbar/listToolbar'
 
 const Board = ({ navigation, route }) => {
-  const lists = data.lists
-
+  const lists = getLists(route.params.board.id)
   return (
         <View style={styles.main}>
         <ListToolbar />
         <View style={[styles.boardBig, styles.coolShadow]}>
-            
+
             <Text style={styles.h2}>{route.params.board.name}</Text>
             <FlatList
                 numColumns={1}
@@ -29,4 +28,15 @@ const Board = ({ navigation, route }) => {
         </View>
   )
 }
+
+function getLists (boardid) {
+  const lists = []
+  for (const i in data.lists) {
+    if (data.lists[i].boardId === boardid) {
+      lists.push(data.lists[i])
+    }
+  }
+  return lists
+}
+
 export default Board
