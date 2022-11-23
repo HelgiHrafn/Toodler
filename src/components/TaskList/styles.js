@@ -3,7 +3,7 @@ export default StyleSheet.create({
   h3: {
     fontSize: 25,
     fontFamily: 'Futura',
-    maxWidth: '65%',
+    maxWidth: '87%',
     maxHeight: '100%'
 
   },
@@ -23,7 +23,6 @@ export default StyleSheet.create({
     paddingBottom: 5,
     display: 'flex',
     flexDirection: 'row',
-    alignItems: 'center',
-    height: 70
+    alignItems: 'center'
   }
 })
