@@ -6,7 +6,9 @@ import Task from '../../components/Task'
 import ListToolbar from '../../components/Toolbar/listToolbar'
 
 const List = ({ navigation, route }) => {
-  const tasks = getTasks(route.params.list.id)
+  const list = route.params.list
+  var tasks = data.tasks
+  tasks = tasks.filter(function(element) {return element.listId == list.id})
 
   return (
         <View style={styles.main}>
@@ -27,16 +29,6 @@ const List = ({ navigation, route }) => {
         </View>
         </View>
   )
-}
-
-function getTasks (listid) {
-  const tasks = []
-  for (const i in data.tasks) {
-    if (data.tasks[i].listId === listid) {
-      tasks.push(data.tasks[i])
-    }
-  }
-  return tasks
 }
 
 export default List
