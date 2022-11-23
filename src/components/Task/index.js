@@ -7,7 +7,10 @@ const Task = ({ task, navigation }) => {
     <TouchableHighlight activeOpacity={0.6} underlayColor="#FFF">
       <View style={styles.list}>
         <View style={[styles.dot]}></View>
-        <Text style={styles.h3}>{task.name}</Text>
+        <View style={styles.textwrapper}>
+            <Text style={styles.h3}>{task.name}</Text>
+            <Text style={styles.h4}>{task.description}</Text>
+        </View>
       </View>
     </TouchableHighlight>
   )

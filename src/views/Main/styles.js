@@ -10,7 +10,7 @@ export default StyleSheet.create({
   },
   main: {
     backgroundColor: 'white',
-    height: '100%'
+    minHeight: '100%'
   },
   boardBig: {
     backgroundColor: 'white',
@@ -20,7 +20,7 @@ export default StyleSheet.create({
     marginHorizontal: 10,
     marginVertical: 10,
     display: 'flex',
-    height: '85%'
+    maxHeight: '85%'
 
   },
   coolShadow: {

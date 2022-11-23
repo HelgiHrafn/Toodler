@@ -1,11 +1,20 @@
 import { StyleSheet } from 'react-native'
 export default StyleSheet.create({
   h3: {
-    fontSize: 25,
+    fontSize: 18,
     fontFamily: 'Futura',
-    maxWidth: '65%',
+    maxWidth: '90%',
     maxHeight: '100%'
 
+  },
+  h4: {
+    fontFamily: 'Futura'
+  },
+  textwrapper: {
+    width: '90%',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'flex-start'
   },
   dot: {
     borderRadius: 100,
@@ -24,6 +33,7 @@ export default StyleSheet.create({
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
-    height: 70
+    minHeight: 70
+    
   }
 })
