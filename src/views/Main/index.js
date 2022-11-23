@@ -4,11 +4,8 @@ import Toolbar from '../../components/Toolbar'
 import BoardList from '../../components/BoardList'
 import data from '../../resources/data.json'
 import styles from './styles'
-import Board from '../SingleBoard'
-
 
 const Boards = ({ navigation }) => {
-  
   return (
         <View>
             <Toolbar />
