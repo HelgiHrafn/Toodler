@@ -9,8 +9,10 @@ const Board = ({ navigation, route }) => {
   const lists = data.lists
 
   return (
+        <View>
+        <ListToolbar />
         <View style={[styles.boardBig, styles.coolShadow]}>
-            <ListToolbar />
+            
             <Text style={styles.h2}>{route.params.board.name}</Text>
             <FlatList
                 numColumns={1}
@@ -23,6 +25,7 @@ const Board = ({ navigation, route }) => {
                 }}
                 keyExtractor={list => list.id}
             />
+        </View>
         </View>
   )
 }
