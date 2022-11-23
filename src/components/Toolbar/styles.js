@@ -6,7 +6,7 @@ export default StyleSheet.create({
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'center',
-        height: 120,
+        height: 50,
         backgroundColor: uranianBlue,
 
     },
