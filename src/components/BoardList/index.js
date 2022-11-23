@@ -4,7 +4,7 @@ import { View, FlatList, Text } from 'react-native'
 import styles from './styles'
 import BoardSmall from '../BoardSmall'
 
-const BoardList = ({ boards, navigation }) => (
+const BoardList = ({ boards, selectedBoardSmall, navigation, onLongPress }) => (
     <View style={styles.boardList}>
         <Text style={styles.h1}>Boards</Text>
         <FlatList
@@ -12,13 +12,16 @@ const BoardList = ({ boards, navigation }) => (
             data={boards}
             renderItem={({ item }) => {
               return (
-                    <BoardSmall
-                        board={item} navigation={navigation}/>
+                    <BoardSmall 
+                        onLongPress={onLongPress}
+                        isSelected={selectedBoardSmall.indexOf(item.name) !==-1}
+                        board={item} 
+                        navigation={navigation}/>
               )
             }}
             keyExtractor={board => board.id}
         />
     </View>
-)
+);
 
-export default BoardList
+export default BoardList;
