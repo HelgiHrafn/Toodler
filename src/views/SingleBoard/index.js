@@ -4,7 +4,7 @@ import data from '../../resources/data.json'
 import styles from './styles'
 import TaskList from '../../components/TaskList'
 
-const Board = ({board}) => {
+const Board = ({ board }) => {
 
         const lists = data.lists;
         
