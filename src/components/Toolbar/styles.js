@@ -6,7 +6,7 @@ export default StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
-    height: 60,
+    height: 80,
     backgroundColor: uranianBlue
 
   },
@@ -20,6 +20,10 @@ export default StyleSheet.create({
     fontSize: 16,
     fontFamily: 'Futura'
 
+  },
+  logo: {
+    width: 140,
+    height: '100%'
   }
 
 })

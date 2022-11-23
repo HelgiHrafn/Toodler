@@ -1,5 +1,6 @@
 import React from 'react'
-import { View, TouchableHighlight, Text } from 'react-native'
+import { View, TouchableHighlight, Text, Image} from 'react-native'
+import logo from '../../resources/logo.png'
 import styles from './styles'
 
 const ListToolbar = () => (
@@ -7,6 +8,7 @@ const ListToolbar = () => (
         <TouchableHighlight style={styles.toolbarAction}>
             <Text style={styles.toolbarActionText}>Create list</Text>
         </TouchableHighlight>
+        <Image style={styles.logo} source={logo} />
         <TouchableHighlight style={styles.toolbarAction}>
             <Text style={styles.toolbarActionText}>Delete</Text>
         </TouchableHighlight>
