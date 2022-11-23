@@ -24,8 +24,6 @@ const Boards = ({ navigation }) => {
   return (
         <View style={styles.main}>
             <Toolbar hasSelectedBoards={selectedBoardSmall.length > 0} />
-            <Text style={styles.h1}>Toodler</Text>
-            {/* <Board board={data.boards[0]}></Board> */}
             <BoardList 
               onLongPress={name => onBoardSmallLongPress(name)}
               selectedBoardSmall={selectedBoardSmall}

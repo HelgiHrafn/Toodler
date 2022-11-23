@@ -3,7 +3,7 @@ import { StyleSheet } from 'react-native'
 export default StyleSheet.create({
   boardList: {
     justifyContent: 'center',
-    maxHeight: '85%',
+    height: '85%',
     marginHorizontal: 10
   },
   h1: {
