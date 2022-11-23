@@ -20,7 +20,7 @@ export default StyleSheet.create({
     marginHorizontal: 10,
     marginVertical: 10,
     display: 'flex',
-    height: '77%'
+    height: '85%'
 
   },
   coolShadow: {

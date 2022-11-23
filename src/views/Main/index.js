@@ -9,9 +9,10 @@ const Boards = ({ navigation }) => {
   return (
         <View style={styles.main}>
             <Toolbar />
+            <View style={[styles.boardBig, styles.coolShadow]}>
+
             <Text style={styles.h1}>Toodler</Text>
             {/* <Board board={data.boards[0]}></Board> */}
-            <View style={[styles.boardBig, styles.coolShadow]}>
             <BoardList boards={data.boards} navigation={navigation}/>
 
             </View>
