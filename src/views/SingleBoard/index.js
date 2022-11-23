@@ -4,13 +4,13 @@ import data from '../../resources/data.json'
 import styles from './styles'
 import TaskList from '../../components/TaskList'
 
-const Board = ({board}) => {
+const Board = ({navigation, route}) => {
 
         const lists = data.lists;
         
         return(
         <View style={[styles.boardBig, styles.coolShadow]}>
-            <Text style={styles.h2}>{board.name}</Text>
+            <Text style={styles.h2}>{route.params.board.name}</Text>
             <FlatList
                 numColumns={1}
                 data={lists}
