@@ -3,14 +3,14 @@ import React from 'react'
 import { Image, View, Text } from 'react-native'
 import styles from './styles'
 
-const BoardSmall = ({ name, thumbnailPhoto }) => {
+const BoardSmall = ({ board }) => {
   return (
         <View style={[styles.boardSmall, styles.coolShadow]}>
-        <Text style={styles.name}>{name}</Text>
+        <Text style={styles.name}>{board.name}</Text>
         <Image
             style={styles.image}
             resizeMode="cover"
-            source={{ uri: thumbnailPhoto }}
+            source={{ uri: board.thumbnailPhoto }}
         />
 
     </View>
