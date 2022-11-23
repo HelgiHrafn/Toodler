@@ -13,10 +13,10 @@ const Board = ({ navigation, route }) => {
             <FlatList
                 numColumns={1}
                 data={lists}
-                renderItem={({ item: { name, color } }) => {
+                renderItem={({ item }) => {
                   return (
 
-                        <TaskList name={name} color={color}/>
+                        <TaskList list={item} navigation={navigation}/>
                   )
                 }}
                 keyExtractor={list => list.id}
