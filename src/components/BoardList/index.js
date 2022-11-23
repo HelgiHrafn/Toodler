@@ -4,7 +4,7 @@ import { View, FlatList, Text } from 'react-native'
 import styles from './styles'
 import BoardSmall from '../BoardSmall'
 
-const BoardList = ({ boards, navigation}) => (
+const BoardList = ({ boards, navigation }) => (
     <View style={styles.boardList}>
         <Text style={styles.h1}>Boards</Text>
         <FlatList

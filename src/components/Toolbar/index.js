@@ -1,6 +1,6 @@
-import React from 'react';
-import { View, TouchableHighlight, Text } from 'react-native';
-import styles from './styles';
+import React from 'react'
+import { View, TouchableHighlight, Text } from 'react-native'
+import styles from './styles'
 
 const Toolbar = () => (
     <View style={styles.toolbar}>
@@ -12,6 +12,6 @@ const Toolbar = () => (
         </TouchableHighlight>
 
     </View>
-);
+)
 
-export default Toolbar;
+export default Toolbar
