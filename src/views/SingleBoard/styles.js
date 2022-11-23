@@ -7,8 +7,8 @@ export default StyleSheet.create({
     paddingHorizontal: 10,
     paddingVertical: 10,
     borderRadius: 15,
-    marginTop: '15%',
     marginHorizontal: 10,
+    marginTop: 10,
     display: 'flex',
     minHeight: '80%'
 
