@@ -27,7 +27,7 @@ const Boards = ({ navigation }) => {
   }
 
   const addBoard = async (inputs) => {
-    const newBoard = await fileService.addBoard(inputs, boardSmall)
+    const newBoard = await fileService.addItem(inputs, boardSmall)
     setBoardSmall([...boardSmall, newBoard])
   }
 
