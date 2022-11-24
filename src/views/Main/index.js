@@ -29,6 +29,7 @@ const Boards = ({ navigation }) => {
   const addBoard = async (inputs) => {
     const newBoard = await fileService.addBoard(inputs, boardSmall)
     setBoardSmall([...boardSmall, newBoard])
+  }
 
   const deleteSelectedBoards = () => {
     let temp = boardSmall
@@ -39,7 +40,6 @@ const Boards = ({ navigation }) => {
         }
     setBoardSmall([...boardSmall])   
     }
-  }
   }
   }
   return (
