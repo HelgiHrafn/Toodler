@@ -4,7 +4,6 @@ export default StyleSheet.create({
   name: {
     fontSize: 30,
     fontFamily: 'Futura',
-    maxWidth: '65%',
     maxHeight: '100%'
   },
   image: {
@@ -39,5 +38,12 @@ export default StyleSheet.create({
   touchable: {
     activeOpacity: 0.6,
     underlayColor: '#FFF'
+  },
+  description: {
+    fontFamily: 'Futura',
+    fontSize: 15
+  },
+  textWrapper: {
+    maxWidth: '60%'
   }
 })

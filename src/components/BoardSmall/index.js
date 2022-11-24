@@ -5,7 +5,6 @@ import  { AntDesign } from '@expo/vector-icons';
 import styles from './styles'
 
 const BoardSmall = ({ board, navigation, onLongPress, isSelected }) => {
-  
   return (
         <TouchableOpacity
           style={styles.touchable} 
@@ -19,7 +18,10 @@ const BoardSmall = ({ board, navigation, onLongPress, isSelected }) => {
                 <></>
           }
           <View style={[{ opacity: isSelected ? .5 : 1 }, styles.boardSmall, styles.coolShadow]}>  
-              <Text style={styles.name}>{board.name}</Text>
+              <View style={styles.textWrapper}>
+                <Text style={styles.name}>{board.name}</Text>
+                <Text style={styles.description}>{board.description}</Text>
+              </View>
               <Image
                   style={styles.image}
                   resizeMode="cover"
