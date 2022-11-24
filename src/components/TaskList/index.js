@@ -1,16 +1,27 @@
 import React from 'react'
-import { View, Text, TouchableHighlight } from 'react-native'
+import { View, Text, TouchableOpacity } from 'react-native'
+import { AntDesign } from '@expo/vector-icons'
 import styles from './styles'
 
-const TaskList = ({ list, navigation }) => {
+const TaskList = ({ list, navigation, onLongPress, isSelected }) => {
   return (
-    <TouchableHighlight activeOpacity={0.6} underlayColor="#FFF"onPress={() => navigation.navigate('List', { list })}>
+    <TouchableOpacity 
+      onLongPress={() => onLongPress(list.name)}
+      activeOpacity={0.6} 
+      underlayColor="#FFF"onPress={() => navigation.navigate('List', { list })}>
+      {
+          isSelected
+            ?
+            <AntDesign name="checkcircleo"/>
+            :
+            <></>
+      }
       <View style={styles.list}>
         <View style={[styles.dot, { backgroundColor: list.color }]}></View>
-        <Text style={styles.h3}>{list.name}</Text>
+        <Text style={[ {opacity: isSelected ? .5 :1}, styles.h3]}>{list.name}</Text>
       </View>
-    </TouchableHighlight>
-  )
+    </TouchableOpacity>
+  );
 }
 
 export default TaskList
