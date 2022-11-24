@@ -21,9 +21,9 @@ const Board = ({ navigation, route }) => {
     } else {
       setSelectedBoardList([...selectedBoardList, name])
     }
-  }
+  };
 
-  const deleteSelectedTasks = () => {
+  const deleteSelectedLists = () => {
     let temp = boardList
     console.log(temp)
     for (let i = 0; i < selectedBoardList.length; i++) {
@@ -35,12 +35,12 @@ const Board = ({ navigation, route }) => {
     setSelectedBoardList([])   
       }
     }
-  }
+  };
 
   return (
         <View style={styles.main}>
         <ListToolbar
-          onRemove={() => deleteSelectedTasks()}
+          onRemove={() => deleteSelectedLists()}
           hasSelectedLists={selectedBoardList.length > 0 } />
         <View style={[styles.boardBig, styles.coolShadow]}>
 
