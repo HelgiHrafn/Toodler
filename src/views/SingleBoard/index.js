@@ -5,6 +5,9 @@ import styles from './styles'
 import TaskList from '../../components/TaskList'
 import ListToolbar from '../../components/Toolbar/listToolbar'
 import PropTypes from 'prop-types'
+import AddListModal from '../../components/AddListModal'
+import * as fileService from '../../services/fileService'
+
 
 const Board = ({ navigation, route }) => {
   const board = route.params.board
@@ -14,7 +17,12 @@ const Board = ({ navigation, route }) => {
   const [boardList, setBoardList] = useState(lists)
   // All selected lists from said board
   const [selectedBoardList, setSelectedBoardList] = useState([])
-
+  
+  const [isAddModalOpen, setIsAddModalOpen] = useState(false)
+  const addList = async (inputs) => {
+    const newList = await fileService.addItem(inputs, data.lists)
+    setBoardList([...boardList, newList])
+  }
   const onBoardListLongPress = name => {
     if (selectedBoardList.indexOf(name) !== -1) {
       setSelectedBoardList(selectedBoardList.filter(boardList => boardList !== name))
@@ -24,7 +32,7 @@ const Board = ({ navigation, route }) => {
   }
   return (
         <View style={styles.main}>
-        <ListToolbar hasSelectedLists={selectedBoardList.length > 0 } />
+        <ListToolbar onAdd={() => setIsAddModalOpen(true)} hasSelectedLists={selectedBoardList.length > 0 } />
         <View style={[styles.boardBig, styles.coolShadow]}>
 
             <Text style={styles.h2}>{board.name}</Text>
@@ -43,6 +51,12 @@ const Board = ({ navigation, route }) => {
                 keyExtractor={list => list.id}
             />
         </View>
+        <AddListModal
+        isOpen={isAddModalOpen}
+        closeModal={() => setIsAddModalOpen(false)}
+        title={'Create new board!'}
+        addList={addList}
+        />
         </View>
   )
 }
