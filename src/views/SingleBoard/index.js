@@ -12,7 +12,7 @@ const Board = ({ navigation, route }) => {
   lists = lists.filter(function(element) {return element.boardId == board.id});
   // All lists within the board
   const [boardList, setBoardList] = useState(lists);
-  //All selected lists from said board
+  // All selected lists from said board
   const [selectedBoardList, setSelectedBoardList] = useState([]);
 
   const onBoardListLongPress = name => {
@@ -36,7 +36,7 @@ const Board = ({ navigation, route }) => {
                         <TaskList 
                         list={item}
                         onLongPress={name => onBoardListLongPress(name)}
-                        isSelected={selectedBoardList.indexOf(item.name) !==-1}
+                        isSelected={selectedBoardList.indexOf(item.name) !== -1}
                         navigation={navigation}/>
                   )
                 }}
