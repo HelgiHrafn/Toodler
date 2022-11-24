@@ -6,10 +6,7 @@ import styles from './styles'
 
 const Task = ({ task, navigation, onLongPress, isSelected }) => {
   const [toggleCheckBox, setToggleCheckBox] = useState(task.isFinished)
-  console.log('hello')
-  console.log(toggleCheckBox)
-  console.log(setToggleCheckBox)
-  console.log(task.isFinished)
+
   if (task.isFinished !== toggleCheckBox) {
     task.isFinished = !task.isFinished
   };
