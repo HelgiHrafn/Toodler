@@ -29,10 +29,27 @@ const Board = ({ navigation, route }) => {
     } else {
       setSelectedBoardList([...selectedBoardList, name])
     }
-  }
+  };
+
+  const deleteSelectedLists = () => {
+    let temp = boardList
+    console.log(temp)
+    for (let i = 0; i < selectedBoardList.length; i++) {
+      for (let y = 0; y < temp.length; y++) {
+        if (selectedBoardList[i] == temp[y].name) {
+          boardList.splice(y, 1);
+        }
+    setBoardList([...boardList])
+    setSelectedBoardList([])   
+      }
+    }
+  };
+
   return (
         <View style={styles.main}>
-        <ListToolbar onAdd={() => setIsAddModalOpen(true)} hasSelectedLists={selectedBoardList.length > 0 } />
+        <ListToolbar onAdd={() => setIsAddModalOpen(true)}
+          onRemove={() => deleteSelectedLists()}
+          hasSelectedLists={selectedBoardList.length > 0 } />
         <View style={[styles.boardBig, styles.coolShadow]}>
 
             <Text style={styles.h2}>{board.name}</Text>

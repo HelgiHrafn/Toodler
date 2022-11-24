@@ -21,10 +21,25 @@ const List = ({ navigation, route }) => {
       setSelelectedTaskList([...selectedTaskList, name]);
     }
   };
+
+  const deleteSelectedTasks = () => {
+    let temp = taskList
+    for (let i = 0; i < selectedTaskList.length; i++) {
+      for (let y = 0; y < temp.length; y++) {
+        if (selectedTaskList[i] == temp[y].name) {
+          taskList.splice(y, 1);
+        }
+    setTaskList([...taskList])
+    setSelelectedTaskList([])   
+      }
+    }
+  };
   
   return (
         <View style={styles.main}>
-        <TaskToolbar hasSelectedTasks={selectedTaskList.length > 0 } />
+        <TaskToolbar
+          onRemove={() => deleteSelectedTasks()} 
+          hasSelectedTasks={selectedTaskList.length > 0 } />
         <View style={[styles.listBig, styles.coolShadow]}>
             <Text style={styles.h2}>{route.params.list.name}</Text>
             <FlatList
