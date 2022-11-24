@@ -3,17 +3,16 @@ import { View, TouchableHighlight, Text, Image } from 'react-native'
 import logo from '../../resources/logo.png'
 import styles from './styles'
 
-
 const Toolbar = ({ hasSelectedBoards, onAdd }) => (
     <View style={styles.toolbar}>
         <TouchableHighlight style={styles.toolbarAction} onPress={onAdd}>
             <Text style={styles.toolbarActionText}>Create board</Text>
         </TouchableHighlight>
         <Image style={styles.logo} source={logo} />
-        <TouchableHighlight 
+        <TouchableHighlight
             style={styles.toolbarAction}
             disabled={!hasSelectedBoards}>
-            <Text style={[styles.toolbarActionText, { color: !hasSelectedBoards ? 'gray'  : {}} ]}>Delete</Text>
+            <Text style={[styles.toolbarActionText, { color: !hasSelectedBoards ? 'gray' : {} }]}>Delete</Text>
         </TouchableHighlight>
 
     </View>
