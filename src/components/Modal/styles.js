@@ -16,6 +16,11 @@ export default StyleSheet.create({
     borderRadius: 10,
     width: winWidth - 50,
     backgroundColor: 'white',
-    padding: 40
+    padding: 10
+  },
+  title: {
+    fontFamily: 'Futura',
+    fontSize: 30,
+    marginBottom: 20
   }
 })

@@ -7,13 +7,14 @@ import CreateBoardInput from '../CreateBoardInput';
 const AddModal = ({
     isOpen,
     closeModal,
-    title
+    title,
+    addBoard
 }) => (
     <Modal
     isOpen={isOpen}
     closeModal={closeModal}
     title={title}>
-        <CreateBoardInput closeModal={closeModal}></CreateBoardInput>
+        <CreateBoardInput addBoard={addBoard} closeModal={closeModal}></CreateBoardInput>
 
     </Modal>
 )
