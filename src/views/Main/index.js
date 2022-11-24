@@ -30,12 +30,23 @@ const Boards = ({ navigation }) => {
     const newBoard = await fileService.addBoard(inputs, boardSmall)
     setBoardSmall([...boardSmall, newBoard])
 
+  const deleteSelectedBoards = () => {
+    let temp = boardSmall
+    for (let i = 0; i < selectedBoardSmall.length; i++) {
+      for (let y = 0; y < temp.length; y++) {
+        if (selectedBoardSmall[i] == temp[y].name) {
+          boardSmall.splice(y, 1);
+        }
+    setBoardSmall([...boardSmall])   
+    }
   }
-
+  }
+  }
   return (
         <View style={styles.main}>
             <Toolbar
             onAdd={() => setIsAddModalOpen(true)}
+            onRemove={() => deleteSelectedBoards()}
             hasSelectedBoards={selectedBoardSmall.length > 0} />
             <BoardList
               onLongPress={name => onBoardSmallLongPress(name)}
