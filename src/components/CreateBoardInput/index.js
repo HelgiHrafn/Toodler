@@ -1,10 +1,12 @@
 import React, { useState } from 'react'
 import { View, TextInput, Text, TouchableOpacity } from 'react-native'
+import styles from './styles'
 
-const CreateBoardInput = ({closeModal}) => {
+const CreateBoardInput = ({ addBoard, closeModal }) => {
   const [inputs, setInputes] = useState({
     name: '',
-    imageLink: ''
+    description: '',
+    thumbnailPhoto: ''
   })
 
   const inputHandler = (name, value) => {
@@ -17,14 +19,26 @@ const CreateBoardInput = ({closeModal}) => {
   return (
         <View>
             <TextInput
+                style={styles.input}
                 placeholder="Name"
                 value={inputs.name}
                 onChangeText={text => inputHandler('name', text)} />
             <TextInput
+                style={styles.input}
+                placeholder="Description"
+                value={inputs.description}
+                onChangeText={text => inputHandler('description', text)} />
+            <TextInput
+                style={styles.input}
                 placeholder="Link to Image"
-                value={inputs.imageLink}
-                onChangeText={text => inputHandler('imageLink', text)} />
-            <TouchableOpacity onPress={() => {console.log(inputs);closeModal()}}><Text>text</Text></TouchableOpacity>
+                value={inputs.thumbnailPhoto}
+                onChangeText={text => inputHandler('thumbnailPhoto', text)} />
+            
+            <TouchableOpacity 
+            style={styles.buttonBackground}
+            onPress={() => { addBoard(inputs); closeModal() }}>
+                <Text style={styles.button} >Create</Text>
+            </TouchableOpacity>
         </View>
   )
 }

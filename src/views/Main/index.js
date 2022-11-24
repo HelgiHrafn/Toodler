@@ -5,6 +5,8 @@ import BoardList from '../../components/BoardList'
 import data from '../../resources/data.json'
 import styles from './styles'
 import AddModal from '../../components/AddModal'
+import * as fileService from '../../services/fileService'
+
 
 const Boards = ({ navigation }) => {
   // All boards within the application directory
@@ -23,6 +25,15 @@ const Boards = ({ navigation }) => {
       setSelectedBoardSmall([...selectedBoardSmall, name])
     }
   }
+
+  const addBoard = async (inputs) => {
+    const newBoard = await fileService.addBoard(inputs, boardSmall)
+    console.log(newBoard)
+    setBoardSmall([...boardSmall, newBoard])
+    console.log(boardSmall)
+
+  }
+
   return (
         <View style={styles.main}>
             <Toolbar
@@ -35,7 +46,9 @@ const Boards = ({ navigation }) => {
         <AddModal
         isOpen={isAddModalOpen}
         closeModal={() => setIsAddModalOpen(false)}
-        title={'Create new board!'}/>
+        title={'Create new board!'}
+        addBoard={addBoard}
+        />
         </View>
   )
 }

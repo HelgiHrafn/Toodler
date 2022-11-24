@@ -15,15 +15,16 @@
     "@react-native-community/checkbox": "^0.5.14",
     "@react-navigation/native": "^6.0.14",
     "@react-navigation/stack": "^6.3.5",
+    "edit-json-file": "^1.7.0",
     "expo": "~47.0.6",
+    "expo-checkbox": "~2.2.2",
     "expo-cli": "^6.0.8",
     "expo-status-bar": "~1.4.2",
     "react": "18.1.0",
     "react-dom": "18.1.0",
     "react-native": "0.70.5",
-    "react-native-web": "~0.18.9",
-    "expo-checkbox": "~2.2.2",
-    "react-native-modal": "^13.0.1"
+    "react-native-modal": "^13.0.1",
+    "react-native-web": "~0.18.9"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",
