@@ -5,12 +5,17 @@ import styles from './styles'
 
 const Task = ({ task, navigation }) => {
   const [toggleCheckBox, setToggleCheckBox] = useState(task.isFinished)
+  console.log('hello')
+  console.log(toggleCheckBox)
+  console.log(setToggleCheckBox)
+  console.log(task.isFinished)
+  if (task.isFinished !== toggleCheckBox) {
+    task.isFinished = !task.isFinished
+  };
 
   return (
     <TouchableHighlight style={styles.touchable}>
     <View style={styles.list}>
-      {/* <input type="checkbox" style={styles.dot} checked={task.isFinished}/> */}
-      {/* <Switch style={styles.checkbox} value={check} onValueChange={value => setCheck(value)} /> */}
       <CheckBox style={styles.checkbox} value={toggleCheckBox} onValueChange={newValue => setToggleCheckBox(newValue)} />
       <View style={styles.textwrapper}>
           <Text style={styles.h3}>{task.name}</Text>
