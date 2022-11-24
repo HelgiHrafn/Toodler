@@ -31,7 +31,8 @@ const Board = ({ navigation, route }) => {
         if (selectedBoardList[i] == temp[y].name) {
           boardList.splice(y, 1);
         }
-    setBoardList([...boardList])   
+    setBoardList([...boardList])
+    setSelectedBoardList([])   
       }
     }
   }
