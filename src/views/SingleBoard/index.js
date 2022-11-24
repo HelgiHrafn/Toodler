@@ -4,11 +4,12 @@ import data from '../../resources/data.json'
 import styles from './styles'
 import TaskList from '../../components/TaskList'
 import ListToolbar from '../../components/Toolbar/listToolbar'
+import PropTypes from 'prop-types'
 
 const Board = ({ navigation, route }) => {
   const board = route.params.board
-  var lists = data.lists
-  lists = lists.filter(function(element) {return element.boardId == board.id})
+  let lists = data.lists
+  lists = lists.filter(function (element) { return element.boardId == board.id})
   return (
         <View style={styles.main}>
         <ListToolbar />
