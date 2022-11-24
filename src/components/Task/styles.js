@@ -38,5 +38,9 @@ export default StyleSheet.create({
   touchable: {
     activeOpacity: 0.6,
     underlayColor: '#FFF'
+  },
+  checkbox: {
+    transform: [{ scaleX: 1.5 }, { scaleY: 1.5 }],
+    margin: 10
   }
 })
