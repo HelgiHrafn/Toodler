@@ -38,7 +38,8 @@ const Boards = ({ navigation }) => {
         if (selectedBoardSmall[i] == temp[y].name) {
           boardSmall.splice(y, 1);
         }
-    setBoardSmall([...boardSmall])   
+    setBoardSmall([...boardSmall])
+    setSelectedBoardSmall([])   
     }
   }
   }
