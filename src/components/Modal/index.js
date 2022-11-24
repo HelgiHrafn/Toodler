@@ -3,13 +3,12 @@ import NativeModal from 'react-native-modal'
 import { View, Text } from 'react-native'
 import styles from './styles'
 import PropTypes from 'prop-types'
-import { TouchableOpacity } from 'react-native-web'
 
 const Modal = ({
-    isOpen,
-    closeModal,
-    title,
-    children
+  isOpen,
+  closeModal,
+  title,
+  children
 
 }) => (
     <NativeModal
@@ -28,10 +27,10 @@ const Modal = ({
 )
 
 Modal.propTypes = {
-    isOpen: PropTypes.bool.isRequired,
-    closeModal: PropTypes.func.isRequired,
-    title: PropTypes.string.isRequired,
-    children: PropTypes.node
+  isOpen: PropTypes.bool.isRequired,
+  closeModal: PropTypes.func.isRequired,
+  title: PropTypes.string.isRequired,
+  children: PropTypes.node
 
 }
 export default Modal

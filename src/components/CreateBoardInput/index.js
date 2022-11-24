@@ -1,20 +1,20 @@
-import React, {useState} from "react";
-import {View, TextInput, Text, TouchableOpacity} from 'react-native'
+import React, { useState } from 'react'
+import { View, TextInput, Text, TouchableOpacity } from 'react-native'
 
-const CreateBoardInput = () => {
-    const [inputs, setInputes] = useState({
-        name: '',
-        imageLink: ''
+const CreateBoardInput = ({closeModal}) => {
+  const [inputs, setInputes] = useState({
+    name: '',
+    imageLink: ''
+  })
+
+  const inputHandler = (name, value) => {
+    setInputes({
+      ...inputs,
+      [name]: value
     })
+  }
 
-    const inputHandler = (name, value) => {
-        setInputes({
-            ...inputs,
-            [name]: value
-        });
-    }
-
-    return (
+  return (
         <View>
             <TextInput
                 placeholder="Name"
@@ -24,10 +24,8 @@ const CreateBoardInput = () => {
                 placeholder="Link to Image"
                 value={inputs.imageLink}
                 onChangeText={text => inputHandler('imageLink', text)} />
-            <TouchableOpacity onPress={() => console.log(inputs)}><Text>text</Text></TouchableOpacity>
+            <TouchableOpacity onPress={() => {console.log(inputs);closeModal()}}><Text>text</Text></TouchableOpacity>
         </View>
-    )
-        
-    
+  )
 }
 export default CreateBoardInput

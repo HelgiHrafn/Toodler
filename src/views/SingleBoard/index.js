@@ -7,21 +7,21 @@ import ListToolbar from '../../components/Toolbar/listToolbar'
 import PropTypes from 'prop-types'
 
 const Board = ({ navigation, route }) => {
-  const board = route.params.board;
-  let lists = data.lists;
-  lists = lists.filter(function(element) {return element.boardId == board.id});
+  const board = route.params.board
+  let lists = data.lists
+  lists = lists.filter(function (element) { return element.boardId == board.id })
   // All lists within the board
-  const [boardList, setBoardList] = useState(lists);
-  //All selected lists from said board
-  const [selectedBoardList, setSelectedBoardList] = useState([]);
+  const [boardList, setBoardList] = useState(lists)
+  // All selected lists from said board
+  const [selectedBoardList, setSelectedBoardList] = useState([])
 
   const onBoardListLongPress = name => {
-     if (selectedBoardList.indexOf(name) !== -1) {
-       setSelectedBoardList(selectedBoardList.filter(boardList => boardList !== name ))
-     } else {
-       setSelectedBoardList([...selectedBoardList, name]);
-     }
-  }; 
+    if (selectedBoardList.indexOf(name) !== -1) {
+      setSelectedBoardList(selectedBoardList.filter(boardList => boardList !== name))
+    } else {
+      setSelectedBoardList([...selectedBoardList, name])
+    }
+  }
   return (
         <View style={styles.main}>
         <ListToolbar hasSelectedLists={selectedBoardList.length > 0 } />
@@ -33,10 +33,10 @@ const Board = ({ navigation, route }) => {
                 data={boardList}
                 renderItem={({ item }) => {
                   return (
-                        <TaskList 
+                        <TaskList
                         list={item}
                         onLongPress={name => onBoardListLongPress(name)}
-                        isSelected={selectedBoardList.indexOf(item.name) !==-1}
+                        isSelected={selectedBoardList.indexOf(item.name) !== -1}
                         navigation={navigation}/>
                   )
                 }}
