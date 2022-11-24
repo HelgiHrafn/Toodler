@@ -83,7 +83,7 @@ const List = ({ navigation, route }) => {
                 if(selectedDropdownMove > 0) {
                   moveTask();
               }
-              }} style={{ display: 'block', borderWidth: 1, borderRadius: 15, borderColor: 'black', padding: 10, textAlign: 'center' }}>Change</Pressable>
+              }} style={{ display: 'block', borderWidth: 1, borderRadius: 15, borderColor: 'black', padding: 10, textAlign: 'center' }}>Move to different list</Pressable>
             </View>
               </View>
               :

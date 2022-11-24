@@ -18,7 +18,7 @@ const TaskList = ({ list, navigation, onLongPress, isSelected, lists }) => {
       }
       <View style={styles.list}>
         <View style={[styles.dot, { backgroundColor: list.color }]}></View>
-        <Text style={[ { opacity: isSelected ? .5 :1 }, styles.h3]}>{list.name}</Text>
+        <Text style={[ { opacity: isSelected ? .5 : 1 }, styles.h3]}>{list.name}</Text>
       </View>
     </TouchableOpacity>
   );

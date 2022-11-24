@@ -13,7 +13,7 @@ const ListToolbar = ({ hasSelectedLists, onRemove, onAdd }) => (
             style={styles.toolbarAction}
             onPress={onRemove}
             disabled={!hasSelectedLists}>
-            <Text style={[styles.toolbarActionText, { color: !hasSelectedLists ? 'gray' :{}}]}>Delete</Text>
+            <Text style={[styles.toolbarActionText, { color: !hasSelectedLists ? 'gray' : 'black'}]}>Delete</Text>
         </TouchableHighlight>
 
     </View>

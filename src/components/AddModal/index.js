@@ -15,7 +15,7 @@ const AddModal = ({
     closeModal={closeModal}
     title={title}>
         <CreateBoardInput addBoard={addBoard} closeModal={closeModal}></CreateBoardInput>
-
+ 
     </Modal>
 )
 

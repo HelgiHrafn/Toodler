@@ -13,7 +13,7 @@ const TaskToolbar = ({ hasSelectedTasks, onRemove }) => (
             style={styles.toolbarAction}
             onPress={onRemove} 
             disabled={!hasSelectedTasks}>
-            <Text style={[styles.toolbarActionText, { color: !hasSelectedTasks ? 'gray' :{}}]}>Delete</Text>
+            <Text style={[styles.toolbarActionText, { color: !hasSelectedTasks ? 'gray' : 'black'}]}>Delete</Text>
         </TouchableHighlight>
 
     </View>
