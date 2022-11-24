@@ -4,12 +4,16 @@ import Toolbar from '../../components/Toolbar'
 import BoardList from '../../components/BoardList'
 import data from '../../resources/data.json'
 import styles from './styles'
+import AddModal from '../../components/AddModal'
 
 const Boards = ({ navigation }) => {
   // All boards within the application directory
   const [boardSmall, setBoardSmall] = useState(data.boards);
   // All selected boards
   const [selectedBoardSmall, setSelectedBoardSmall] = useState([]);
+
+
+  const [isAddModalOpen, setIsAddModalOpen] = useState(false)
 
   const onBoardSmallLongPress = name =>  {
     if (selectedBoardSmall.indexOf(name) !== -1)  {
@@ -23,11 +27,17 @@ const Boards = ({ navigation }) => {
   };
   return (
         <View style={styles.main}>
-            <Toolbar hasSelectedBoards={selectedBoardSmall.length > 0} />
+            <Toolbar 
+            onAdd={() => setIsAddModalOpen(true)}
+            hasSelectedBoards={selectedBoardSmall.length > 0} />
             <BoardList 
               onLongPress={name => onBoardSmallLongPress(name)}
               selectedBoardSmall={selectedBoardSmall}
               boards={boardSmall} navigation={navigation}/>
+        <AddModal
+        isOpen={isAddModalOpen}
+        closeModal={() => setIsAddModalOpen(false)}
+        title={'Create new board!'}/>
         </View>
   )
 }

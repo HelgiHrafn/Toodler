@@ -4,9 +4,9 @@ import logo from '../../resources/logo.png'
 import styles from './styles'
 
 
-const Toolbar = ({ hasSelectedBoards }) => (
+const Toolbar = ({ hasSelectedBoards, onAdd }) => (
     <View style={styles.toolbar}>
-        <TouchableHighlight style={styles.toolbarAction}>
+        <TouchableHighlight style={styles.toolbarAction} onPress={onAdd}>
             <Text style={styles.toolbarActionText}>Create board</Text>
         </TouchableHighlight>
         <Image style={styles.logo} source={logo} />
