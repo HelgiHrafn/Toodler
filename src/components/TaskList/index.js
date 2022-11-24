@@ -3,12 +3,12 @@ import { View, Text, TouchableOpacity } from 'react-native'
 import { AntDesign } from '@expo/vector-icons'
 import styles from './styles'
 
-const TaskList = ({ list, navigation, onLongPress, isSelected }) => {
+const TaskList = ({ list, navigation, onLongPress, isSelected, lists }) => {
   return (
     <TouchableOpacity 
       onLongPress={() => onLongPress(list.name)}
       activeOpacity={0.6} 
-      underlayColor="#FFF"onPress={() => navigation.navigate('List', { list })}>
+      underlayColor="#FFF"onPress={() => navigation.navigate('List', { list, lists })}>
       {
           isSelected
             ?

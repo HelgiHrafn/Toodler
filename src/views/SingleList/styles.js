@@ -31,5 +31,10 @@ export default StyleSheet.create({
   main: {
     backgroundColor: 'white',
     minHeight: '100%'
+  },
+  button: {
+    width: 200,
+    padding: 10,
+    marginTop: 7,
   }
 })

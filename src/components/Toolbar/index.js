@@ -13,7 +13,7 @@ const Toolbar = ({ hasSelectedBoards, onAdd, onRemove }) => (
             style={styles.toolbarAction}
             onPress={onRemove}
             disabled={!hasSelectedBoards}>
-            <Text style={[styles.toolbarActionText, { color: !hasSelectedBoards ? 'gray' : {} }]}>Delete</Text>
+            <Text style={[styles.toolbarActionText, { color: !hasSelectedBoards ? 'gray' : 'black' }]}>Delete</Text>
         </TouchableHighlight>
 
     </View>

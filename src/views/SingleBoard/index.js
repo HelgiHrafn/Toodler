@@ -13,6 +13,7 @@ const Board = ({ navigation, route }) => {
   const board = route.params.board
   let lists = data.lists
   lists = lists.filter(function (element) { return element.boardId == board.id })
+  console.log("data: ", lists)
   // All lists within the board
   const [boardList, setBoardList] = useState(lists)
   // All selected lists from said board
@@ -60,6 +61,7 @@ const Board = ({ navigation, route }) => {
                   return (
                         <TaskList
                         list={item}
+                        lists={lists}
                         onLongPress={name => onBoardListLongPress(name)}
                         isSelected={selectedBoardList.indexOf(item.name) !== -1}
                         navigation={navigation}/>
