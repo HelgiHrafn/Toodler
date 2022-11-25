@@ -1,8 +1,10 @@
 import React from 'react'
 import NativeModal from 'react-native-modal'
-import { View, Text } from 'react-native'
+import { View, Text, TouchableOpacity } from 'react-native'
 import styles from './styles'
 import PropTypes from 'prop-types'
+import { Icon } from '@rneui/themed'
+
 
 const Modal = ({
   isOpen,
@@ -15,10 +17,11 @@ const Modal = ({
         isVisible={isOpen}
         hasBackdrop={true}
         onBackButtonPress={closeModal}
-        onSwipeComplete={closeModal}
-        swipeDirection={['up', 'down']}
         style={styles.modal}>
             <View style={styles.body}>
+              <View style={styles.buttonWrapper}>
+                <TouchableOpacity onPress={closeModal} style={styles.closeButton}><Icon name="close"></Icon></TouchableOpacity>
+              </View>
                 <Text style={styles.title} >{title}</Text>
                 {children}
             </View>

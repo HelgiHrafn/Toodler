@@ -6,13 +6,11 @@ export default StyleSheet.create({
   modal: {
     flex: 1,
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
+    height: '100%'
   },
   body: {
-    flex: 1,
-    justifyContent: 'center',
     alignItems: 'center',
-    flexGrow: 0.4,
     borderRadius: 10,
     width: winWidth - 50,
     backgroundColor: 'white',
@@ -22,5 +20,13 @@ export default StyleSheet.create({
     fontFamily: 'Futura',
     fontSize: 30,
     marginBottom: 20
+  },
+  closeButton: {
+    width: 20,
+    height: 20
+  },
+  buttonWrapper: {
+    width: '97%',
+    height: 20
   }
 })

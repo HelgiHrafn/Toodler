@@ -73,7 +73,7 @@ const Board = ({ navigation, route }) => {
         <AddListModal
         isOpen={isAddModalOpen}
         closeModal={() => setIsAddModalOpen(false)}
-        title={'Create new board!'}
+        title={'Create new list!'}
         addList={addList}
         />
         </View>
