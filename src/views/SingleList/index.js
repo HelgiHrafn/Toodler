@@ -47,7 +47,7 @@ const List = ({ navigation, route }) => {
     for (let i = 0; i < selectedTaskList.length; i++) {
       for (let y = 0; y < temp.length; y++) {
         if (selectedTaskList[i] == temp[y].name) {
-          temp[y].listId = ""
+          temp[y].listId = ''
           taskList.splice(y, 1);
         }
     setTaskList([...temp])
@@ -98,7 +98,7 @@ const List = ({ navigation, route }) => {
             </Picker>
             <View style={{ width: 100, marginTop: 10, marginBottom: 15 }}>
               <Button
-                title="pressme" 
+                title="move" 
                 onPress={() => {
                 if(selectedDropdownMove > 0) {
                   moveTask();
