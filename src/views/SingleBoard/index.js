@@ -28,6 +28,7 @@ const Board = ({ navigation, route }) => {
     newList.boardId = board.id
     data.lists.push(newList)
     boardList.push(newList)
+    setAllLists([...allLists, newList])
   }
   const onBoardListLongPress = name => {
     if (selectedBoardList.indexOf(name) !== -1) {
@@ -39,7 +40,6 @@ const Board = ({ navigation, route }) => {
 
   const deleteSelectedLists = () => {
     const temp = boardList
-    console.log(temp)
     for (let i = 0; i < selectedBoardList.length; i++) {
       for (let y = 0; y < temp.length; y++) {
         if (selectedBoardList[i] == temp[y].name) {

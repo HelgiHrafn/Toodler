@@ -29,15 +29,13 @@ const List = ({ navigation, route }) => {
       setSelelectedTaskList([...selectedTaskList, name])
     }
   }
-  console.log('alltasks: ', allTasks)
-  console.log('tasklist: ', taskList)
   const addTask = async (inputs) => {
     const newTask = await fileService.addItem(inputs, allTasks)
     newTask.listId = list.id
     newTask.isFinished = false
     data.tasks.push(newTask)
     taskList.push(newTask)
-    allTasks.push(newTask)
+    setAllTasks([...allTasks, newTask])
   }
 
   const deleteSelectedTasks = () => {
@@ -82,7 +80,6 @@ const List = ({ navigation, route }) => {
            <Picker
                 selectedValue={selectedDropdownMove}
                 onValueChange={value => {
-                  // console.log("value: ", value)
                   setSelectedDropdownMove(value)
                 }}>
                     <Picker.Item key={100022} label={'Select move'} value={null} />

@@ -7,7 +7,6 @@ import styles from './styles'
 import AddModal from '../../components/AddModal'
 import * as fileService from '../../services/fileService'
 
-
 const Boards = ({ navigation }) => {
   // All boards within the application directory
   const [boardSmall, setBoardSmall] = useState(data.boards)
@@ -27,30 +26,26 @@ const Boards = ({ navigation }) => {
   }
 
   const addBoard = async (inputs) => {
-      const newBoard = await fileService.addItem(inputs, boardSmall)
+    const newBoard = await fileService.addItem(inputs, boardSmall)
     setBoardSmall([...boardSmall, newBoard])
   }
 
   const deleteSelectedBoards = () => {
-    let temp = boardSmall
+    const temp = boardSmall
     for (let i = 0; i < selectedBoardSmall.length; i++) {
       for (let y = 0; y < temp.length; y++) {
         if (selectedBoardSmall[i] == temp[y].name) {
-          boardSmall.splice(y, 1);
+          boardSmall.splice(y, 1)
         }
-    setBoardSmall([...boardSmall])
-    setSelectedBoardSmall([])   
+        setBoardSmall([...boardSmall])
+        setSelectedBoardSmall([])
+      }
     }
   }
-  }
-  console.log('boards:')
-  console.log(data.boards)
-  console.log('boardsmall: ')
-  console.log(boardSmall)
   return (
-    
+
         <View style={styles.main}>
-          
+
             <Toolbar
             onAdd={() => setIsAddModalOpen(true)}
             onRemove={() => deleteSelectedBoards()}
