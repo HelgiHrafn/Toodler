@@ -80,7 +80,7 @@ const List = ({ navigation, route }) => {
             </Picker>
             <View style={{ width: 100, marginTop: 10, marginBottom: 15 }}>
               <Button
-                title="pressme" 
+                title="Confirm" 
                 onPress={() => {
                 if(selectedDropdownMove > 0) {
                   moveTask();
