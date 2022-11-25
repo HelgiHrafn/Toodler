@@ -11,18 +11,27 @@ import * as fileService from '../../services/fileService'
 
 const Board = ({ navigation, route }) => {
   const board = route.params.board
-  let lists = data.lists
-  lists = lists.filter(function (element) { return element.boardId == board.id })
-  console.log("data: ", lists)
+  const lists = data.lists
+
+  const [allLists, setAllLists] = useState([...lists])
+
+  const showlists = lists.filter(function (element) { return element.boardId == board.id })
+
   // All lists within the board
-  const [boardList, setBoardList] = useState(lists)
+  const [boardList, setBoardList] = useState([...showlists])
+
   // All selected lists from said board
   const [selectedBoardList, setSelectedBoardList] = useState([])
   
   const [isAddModalOpen, setIsAddModalOpen] = useState(false)
+
+
   const addList = async (inputs) => {
-    const newList = await fileService.addItem(inputs, data.lists)
+    const newList = await fileService.addItem(inputs, allLists)
+    newList.boardId = board.id
+    setAllLists([...allLists, newList])
     setBoardList([...boardList, newList])
+    
   }
   const onBoardListLongPress = name => {
     if (selectedBoardList.indexOf(name) !== -1) {
@@ -61,7 +70,7 @@ const Board = ({ navigation, route }) => {
                   return (
                         <TaskList
                         list={item}
-                        lists={lists}
+                        lists={boardList}
                         onLongPress={name => onBoardListLongPress(name)}
                         isSelected={selectedBoardList.indexOf(item.name) !== -1}
                         navigation={navigation}/>

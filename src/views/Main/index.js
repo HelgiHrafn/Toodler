@@ -43,8 +43,14 @@ const Boards = ({ navigation }) => {
     }
   }
   }
+  console.log('boards:')
+  console.log(data.boards)
+  console.log('boardsmall: ')
+  console.log(boardSmall)
   return (
+    
         <View style={styles.main}>
+          
             <Toolbar
             onAdd={() => setIsAddModalOpen(true)}
             onRemove={() => deleteSelectedBoards()}
