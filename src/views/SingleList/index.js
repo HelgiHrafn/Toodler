@@ -121,7 +121,7 @@ const List = ({ navigation, route }) => {
         <AddTaskModal
         isOpen={isAddModalOpen}
         closeModal={() => setIsAddModalOpen(false)}
-        title={'Create new list!'}
+        title={'Create new task!'}
         addTask={addTask}
         />
         </View>

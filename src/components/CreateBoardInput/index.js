@@ -27,11 +27,9 @@ const CreateBoardInput = ({ addBoard, closeModal }) => {
 
     if (!name) {
       errors.name = 'Name can not be empty'
-      console.log(errors)
     }
     if (!thumbnailPhoto) {
       errors.thumbnailPhoto = 'Image field can not be empty'
-      console.log(errors)
     }
 
     setErrors(errors)

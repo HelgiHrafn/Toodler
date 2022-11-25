@@ -28,11 +28,9 @@ const CreateListInput = ({ addList, closeModal }) => {
 
     if (!name) {
       errors.name = 'Name can not be empty'
-      console.log(errors)
     }
     if (color === '') {
       errors.color = 'Please select a color from the dropdown menu'
-      console.log(errors)
     }
 
     setErrors(errors)
