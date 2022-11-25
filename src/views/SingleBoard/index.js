@@ -29,9 +29,8 @@ const Board = ({ navigation, route }) => {
   const addList = async (inputs) => {
     const newList = await fileService.addItem(inputs, allLists)
     newList.boardId = board.id
-    setAllLists([...allLists, newList])
-    setBoardList([...boardList, newList])
-    
+    data.lists.push(newList)
+    boardList.push(newList)
   }
   const onBoardListLongPress = name => {
     if (selectedBoardList.indexOf(name) !== -1) {
@@ -47,6 +46,7 @@ const Board = ({ navigation, route }) => {
     for (let i = 0; i < selectedBoardList.length; i++) {
       for (let y = 0; y < temp.length; y++) {
         if (selectedBoardList[i] == temp[y].name) {
+          temp[y].boardId = ''
           boardList.splice(y, 1);
         }
     setBoardList([...boardList])

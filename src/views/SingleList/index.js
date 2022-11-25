@@ -36,11 +36,9 @@ const List = ({ navigation, route }) => {
     const newTask = await fileService.addItem(inputs, allTasks)
     newTask.listId = list.id
     newTask.isFinished = false
-    let temp = taskList
-    
-    setAllTasks([...allTasks, newTask])
-    setTaskList([...taskList, newTask])
-    
+    data.tasks.push(newTask)
+    taskList.push(newTask)
+    allTasks.push(newTask)
   }
 
 
