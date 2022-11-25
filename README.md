@@ -1,4 +1,5 @@
 # Toodler
+## Group 9 - Guðmundur, Helgi & Kristján
 
 ### Install dependancies
 
@@ -23,9 +24,13 @@ Long press any board/list/task.
 
 Press the Delete button on the right side of the toolbar which should be available once any item is selected.
 
+Multiple items can be selected for simultaneous deletion.
+
 ### How to modify an existing board/list/task
 
-xxx work in progress xxx
+On the right side of any board/list/task is a green 'Edit' button.
+
+Pressing the button will open an interface which allows for changing the chosen object.
 
 ### How to move a task to another list
 
@@ -33,10 +38,16 @@ Long press any task.
 
 Select a list from the dropdown menu.
 
-Press the 'Confirm' button. The task has now been moved to the selected list.
+Press the 'Move task to list' button. The task has now been moved to the selected list.
 
-Tasks can only be moved to lists which belong to the same board. 
+Tasks can only be moved to lists which belong to the same board (intentional design choice). 
 
 ### Extras
 
-xxx work in progress xxx
+All user inputs are validated when creating a board/list/task.
+
+All user inputs are validated when modifying an existing board/list/task.
+
+User is presented with a choice of colors when creating a new list.
+
+Tasks can be checked off and stay in their state for the session.
