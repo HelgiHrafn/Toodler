@@ -11,25 +11,24 @@ import * as fileService from '../../services/fileService'
 const List = ({ navigation, route }) => {
   const list = route.params.list
   const lists = route.params.lists
-  //const onTaskChangeListPress = route.params.onTaskChangeList
+  // const onTaskChangeListPress = route.params.onTaskChangeList
   const tasks = data.tasks
-  const thetasks = tasks
-  const [allTasks, setAllTasks] = useState([...thetasks])
- 
-  const showTasks = tasks.filter(function(element) {return element.listId == list.id})
+  const [allTasks, setAllTasks] = useState([...tasks])
+
+  const showTasks = tasks.filter(function (element) { return element.listId == list.id })
   // All tasks within a list
-  const [ taskList, setTaskList ] = useState([...showTasks]);
-  const [ selectedDropdownMove, setSelectedDropdownMove ] = useState(null);
+  const [taskList, setTaskList] = useState([...showTasks])
+  const [selectedDropdownMove, setSelectedDropdownMove] = useState(null)
   // All selected tasks from said list
-  const [ selectedTaskList, setSelelectedTaskList] = useState([]);
+  const [selectedTaskList, setSelelectedTaskList] = useState([])
   const [isAddModalOpen, setIsAddModalOpen] = useState(false)
   const onTaskListLongPress = name => {
     if (selectedTaskList.indexOf(name) !== -1) {
-      setSelelectedTaskList(selectedTaskList.filter(taskList => taskList !== name ));
+      setSelelectedTaskList(selectedTaskList.filter(taskList => taskList !== name))
     } else {
-      setSelelectedTaskList([...selectedTaskList, name]);
+      setSelelectedTaskList([...selectedTaskList, name])
     }
-  };
+  }
   console.log('alltasks: ', allTasks)
   console.log('tasklist: ', taskList)
   const addTask = async (inputs) => {
@@ -41,57 +40,56 @@ const List = ({ navigation, route }) => {
     allTasks.push(newTask)
   }
 
-
   const deleteSelectedTasks = () => {
-    let temp = taskList
+    const temp = taskList
     for (let i = 0; i < selectedTaskList.length; i++) {
       for (let y = 0; y < temp.length; y++) {
         if (selectedTaskList[i] == temp[y].name) {
           temp[y].listId = ''
-          taskList.splice(y, 1);
+          taskList.splice(y, 1)
         }
-    setTaskList([...temp])
-    setSelelectedTaskList([])   
+        setTaskList([...temp])
+        setSelelectedTaskList([])
       }
     }
-  };
+  }
 
   const moveTask = () => {
-    let temp = taskList;
+    const temp = taskList
     for (let i = 0; i < selectedTaskList.length; i++) {
       for (let y = 0; y < temp.length; y++) {
         if (selectedTaskList[i] == temp[y].name) {
-          temp[y].listId = Number(selectedDropdownMove);
-          taskList.splice(y, 1);
+          temp[y].listId = Number(selectedDropdownMove)
+          taskList.splice(y, 1)
         }
-      //setTaskList([...temp])
-      setSelelectedTaskList([])   
+        // setTaskList([...temp])
+        setSelelectedTaskList([])
       }
     }
-  };
+  }
 
   return (
         <View style={styles.main}>
         <TaskToolbar
           onAdd={() => setIsAddModalOpen(true)}
-          onRemove={() => deleteSelectedTasks()} 
+          onRemove={() => deleteSelectedTasks()}
           hasSelectedTasks={selectedTaskList.length > 0 } />
         <View style={[styles.listBig, styles.coolShadow]}>
             <Text style={styles.h2}>{route.params.list.name}</Text>
             {
-              selectedTaskList.length > 0 && lists && lists.length > 0 ?
-              <View>
+              selectedTaskList.length > 0 && lists && lists.length > 0
+                ? <View>
            <Picker
                 selectedValue={selectedDropdownMove}
                 onValueChange={value => {
-                  //console.log("value: ", value)
+                  // console.log("value: ", value)
                   setSelectedDropdownMove(value)
-                  }}>
+                }}>
                     <Picker.Item key={100022} label={'Select move'} value={null} />
 
                 {
                   lists.map((listName, index) => {
-                    if(list?.id === listName.id) return null
+                    if (list?.id === listName.id) return null
                     return <Picker.Item key={index} label={listName.name} value={listName.id} />
                   })
                 }
@@ -100,24 +98,23 @@ const List = ({ navigation, route }) => {
               <Button
                 title="move" 
                 onPress={() => {
-                if(selectedDropdownMove > 0) {
-                  moveTask();
-                }
-              }}>Move to different list</Button>
+                  if (selectedDropdownMove > 0) {
+                    moveTask()
+                  }
+                }}>Move to different list</Button>
             </View>
               </View>
-              :
-              null
+                : null
             }
             <FlatList
                 numColumns={1}
                 data={taskList}
                 renderItem={({ item }) => {
                   return (
-                        <Task 
+                        <Task
                         task={item}
                         onLongPress={name => onTaskListLongPress(name)}
-                        isSelected={selectedTaskList.indexOf(item.name) !== -1} 
+                        isSelected={selectedTaskList.indexOf(item.name) !== -1}
                         navigation={navigation}/>
                   )
                 }}

@@ -4,10 +4,8 @@ import data from '../../resources/data.json'
 import styles from './styles'
 import TaskList from '../../components/TaskList'
 import ListToolbar from '../../components/Toolbar/listToolbar'
-import PropTypes from 'prop-types'
 import AddListModal from '../../components/AddListModal'
 import * as fileService from '../../services/fileService'
-
 
 const Board = ({ navigation, route }) => {
   const board = route.params.board
@@ -22,9 +20,8 @@ const Board = ({ navigation, route }) => {
 
   // All selected lists from said board
   const [selectedBoardList, setSelectedBoardList] = useState([])
-  
-  const [isAddModalOpen, setIsAddModalOpen] = useState(false)
 
+  const [isAddModalOpen, setIsAddModalOpen] = useState(false)
 
   const addList = async (inputs) => {
     const newList = await fileService.addItem(inputs, allLists)
@@ -38,22 +35,22 @@ const Board = ({ navigation, route }) => {
     } else {
       setSelectedBoardList([...selectedBoardList, name])
     }
-  };
+  }
 
   const deleteSelectedLists = () => {
-    let temp = boardList
+    const temp = boardList
     console.log(temp)
     for (let i = 0; i < selectedBoardList.length; i++) {
       for (let y = 0; y < temp.length; y++) {
         if (selectedBoardList[i] == temp[y].name) {
           temp[y].boardId = ''
-          boardList.splice(y, 1);
+          boardList.splice(y, 1)
         }
-    setBoardList([...boardList])
-    setSelectedBoardList([])   
+        setBoardList([...boardList])
+        setSelectedBoardList([])
       }
     }
-  };
+  }
 
   return (
         <View style={styles.main}>

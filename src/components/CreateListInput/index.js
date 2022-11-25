@@ -35,6 +35,11 @@ const CreateListInput = ({ addList, closeModal }) => {
                 <Picker.Item label="Cerulean crayola" value="#3fa7d6ff" />
                 <Picker.Item label="Maximum Yellow Red" value="#fac05eff" />
                 <Picker.Item label="Vivid Tangerine" value="#f79d84ff" />
+                <Picker.Item label="uranianBlue" value="#a3d9ffff" />
+                <Picker.Item label="chineseViolet" value="#7e6b8fff" />
+                <Picker.Item label="celadon" value="#96e6b3ff" />
+                <Picker.Item label="amaranth" value="#da3e52ff" />
+                <Picker.Item label="corn" value="#f2e94eff" />
             </Picker>
 
             <TouchableOpacity
