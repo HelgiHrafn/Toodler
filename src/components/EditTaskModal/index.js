@@ -1,6 +1,6 @@
 import React from 'react'
 import Modal from '../Modal'
-import EditBoardInput from '../EditInput'
+import EditTaskInput from '../EditTaskInput'
 
 const EditTaskModal = ({
   isOpen,
@@ -14,7 +14,7 @@ const EditTaskModal = ({
     closeModal={closeModal}
     title={title}>
 
-        <EditBoardInput original={original} editFunction={editFunction} closeModal={closeModal}></EditBoardInput>
+        <EditTaskInput original={original} editFunction={editFunction} closeModal={closeModal}></EditTaskInput>
 
     </Modal>
 )
