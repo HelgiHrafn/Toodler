@@ -6,6 +6,7 @@ import data from '../../resources/data.json'
 import styles from './styles'
 import AddModal from '../../components/AddModal'
 import * as fileService from '../../services/fileService'
+import EditModal from '../../components/EditModal'
 
 const Boards = ({ navigation }) => {
   // All boards within the application directory
@@ -14,6 +15,8 @@ const Boards = ({ navigation }) => {
   const [selectedBoardSmall, setSelectedBoardSmall] = useState([])
 
   const [isAddModalOpen, setIsAddModalOpen] = useState(false)
+  const [isEditModalOpen, setIsEditModalOpen] = useState(false)
+  const [currentEditingBoard, setCurrentEditingBoard] = useState()
 
   const onBoardSmallLongPress = name => {
     if (selectedBoardSmall.indexOf(name) !== -1) {
@@ -28,6 +31,17 @@ const Boards = ({ navigation }) => {
   const addBoard = async (inputs) => {
     const newBoard = await fileService.addItem(inputs, boardSmall)
     setBoardSmall([...boardSmall, newBoard])
+  }
+  const editBoard = (original, inputs) => {
+    original.name = inputs.name
+    original.description = inputs.description
+    original.thumbnailPhoto = inputs.thumbnailPhoto
+    for (let i=1; i< boardSmall.length; i++) {
+      if (boardSmall.id == original.id) {
+        boardSmall.splice(i, 1)
+        setBoardSmall([...boardSmall, original])
+      }
+    }
   }
 
   const deleteSelectedBoards = () => {
@@ -51,6 +65,7 @@ const Boards = ({ navigation }) => {
             onRemove={() => deleteSelectedBoards()}
             hasSelectedBoards={selectedBoardSmall.length > 0} />
             <BoardList
+              onEdit={(board) => {setIsEditModalOpen(true); setCurrentEditingBoard(board)}}
               onLongPress={name => onBoardSmallLongPress(name)}
               selectedBoardSmall={selectedBoardSmall}
               boards={boardSmall} navigation={navigation}/>
@@ -60,6 +75,13 @@ const Boards = ({ navigation }) => {
         title={'Create new board!'}
         addBoard={addBoard}
         />
+        <EditModal
+        editFunction={editBoard}
+        isOpen={isEditModalOpen}
+        original={currentEditingBoard}
+        closeModal={() => setIsEditModalOpen(false)}
+        title={'Edit board'}
+        editFunction={editBoard}/>
         </View>
   )
 }
