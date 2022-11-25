@@ -76,6 +76,7 @@ const Boards = ({ navigation }) => {
         addBoard={addBoard}
         />
         <EditModal
+        editFunction={editBoard}
         isOpen={isEditModalOpen}
         original={currentEditingBoard}
         closeModal={() => setIsEditModalOpen(false)}
