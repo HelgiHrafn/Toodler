@@ -3,6 +3,7 @@ import { View, TouchableHighlight, Text, Image } from 'react-native'
 import logo from '../../resources/logo.png'
 import styles from './styles'
 
+
 const Toolbar = ({ hasSelectedBoards, onAdd, onRemove }) => (
     <View style={styles.toolbar}>
         <TouchableHighlight style={styles.toolbarAction} onPress={onAdd}>

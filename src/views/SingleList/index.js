@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { View, Text, FlatList, Pressable, Button } from 'react-native'
+import { View, Text, FlatList, TouchableOpacity, Button } from 'react-native'
 import data from '../../resources/data.json'
 import styles from './styles'
 import Task from '../../components/Task'
@@ -9,25 +9,29 @@ import AddTaskModal from '../../components/AddTaskModal'
 import * as fileService from '../../services/fileService'
 import EditTaskModal from '../../components/EditTaskModal'
 
+
 const List = ({ navigation, route }) => {
   const list = route.params.list
+  
   const lists = route.params.lists
   // const onTaskChangeListPress = route.params.onTaskChangeList
   const tasks = data.tasks
+  
   const [allTasks, setAllTasks] = useState([...tasks])
 
   const showTasks = tasks.filter(function (element) { return element.listId == list.id })
   // All tasks within a list
   const [taskList, setTaskList] = useState([...showTasks])
+  
   const [selectedDropdownMove, setSelectedDropdownMove] = useState(null)
   // All selected tasks from said list
   const [selectedTaskList, setSelelectedTaskList] = useState([])
+  
   const [isAddModalOpen, setIsAddModalOpen] = useState(false)
 
   const [isEditTaskModalOpen, setIsEditTaskModalOpen] = useState(false)
+  
   const [currentEditingTask, setCurrentEditingTask] = useState()
-
-
 
   const onTaskListLongPress = name => {
     if (selectedTaskList.indexOf(name) !== -1) {
@@ -78,7 +82,6 @@ const List = ({ navigation, route }) => {
           temp[y].listId = Number(selectedDropdownMove)
           taskList.splice(y, 1)
         }
-        // setTaskList([...temp])
         setSelelectedTaskList([])
       }
     }
@@ -109,14 +112,14 @@ const List = ({ navigation, route }) => {
                   })
                 }
             </Picker>
-            <View style={{ width: 100, marginTop: 10, marginBottom: 15 }}>
-              <Button
-                title="move" 
+            <View>
+              <TouchableOpacity style={styles.editButton}
                 onPress={() => {
                   if (selectedDropdownMove > 0) {
                     moveTask()
                   }
-                }}>Move to different list</Button>
+                }}><Text style={styles.editText}>Move Task To List</Text>
+                </TouchableOpacity>
             </View>
               </View>
                 : null
@@ -134,15 +137,13 @@ const List = ({ navigation, route }) => {
                         navigation={navigation}/>
                   )
                 }}
-                keyExtractor={task => task.id}
-            />
+                keyExtractor={task => task.id}/>
         </View>
         <AddTaskModal
         isOpen={isAddModalOpen}
         closeModal={() => setIsAddModalOpen(false)}
         title={'Create new task!'}
-        addTask={addTask}
-        />
+        addTask={addTask}/>
         <EditTaskModal
         isOpen={isEditTaskModalOpen}
         original={currentEditingTask}

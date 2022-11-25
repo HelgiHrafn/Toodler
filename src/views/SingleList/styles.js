@@ -1,4 +1,5 @@
 import { StyleSheet } from 'react-native'
+import { emerald } from '../../styles/colors'
 
 export default StyleSheet.create({
 
@@ -36,5 +37,16 @@ export default StyleSheet.create({
     width: 200,
     padding: 10,
     marginTop: 7
+  },
+  editButton: {
+    backgroundColor: emerald,
+    borderRadius: 7,
+    alignSelf: 'flex-end',
+    paddingHorizontal: 5,
+    paddingVertical: 2,
+    margin: 10
+  },
+  editText: {
+    fontFamily: 'Futura'
   }
 })

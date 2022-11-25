@@ -3,6 +3,7 @@ import { View, TouchableHighlight, Text, Image} from 'react-native'
 import logo from '../../resources/logo.png'
 import styles from './styles'
 
+
 const ListToolbar = ({ hasSelectedLists, onRemove, onAdd }) => (
     <View style={styles.toolbar}>
         <TouchableHighlight style={styles.toolbarAction} onPress={onAdd}>
@@ -15,7 +16,6 @@ const ListToolbar = ({ hasSelectedLists, onRemove, onAdd }) => (
             disabled={!hasSelectedLists}>
             <Text style={[styles.toolbarActionText, { color: !hasSelectedLists ? 'gray' : 'black'}]}>Delete</Text>
         </TouchableHighlight>
-
     </View>
 )
 

@@ -8,6 +8,7 @@ import AddModal from '../../components/AddModal'
 import * as fileService from '../../services/fileService'
 import EditModal from '../../components/EditModal'
 
+
 const Boards = ({ navigation }) => {
   // All boards within the application directory
   const [boardSmall, setBoardSmall] = useState(data.boards)
@@ -15,7 +16,9 @@ const Boards = ({ navigation }) => {
   const [selectedBoardSmall, setSelectedBoardSmall] = useState([])
 
   const [isAddModalOpen, setIsAddModalOpen] = useState(false)
+  
   const [isEditModalOpen, setIsEditModalOpen] = useState(false)
+  
   const [currentEditingBoard, setCurrentEditingBoard] = useState()
 
   const onBoardSmallLongPress = name => {
@@ -57,9 +60,7 @@ const Boards = ({ navigation }) => {
     }
   }
   return (
-
         <View style={styles.main}>
-
             <Toolbar
             onAdd={() => setIsAddModalOpen(true)}
             onRemove={() => deleteSelectedBoards()}
@@ -73,15 +74,13 @@ const Boards = ({ navigation }) => {
         isOpen={isAddModalOpen}
         closeModal={() => setIsAddModalOpen(false)}
         title={'Create new board!'}
-        addBoard={addBoard}
-        />
+        addBoard={addBoard}/>
         <EditModal
         editFunction={editBoard}
         isOpen={isEditModalOpen}
         original={currentEditingBoard}
         closeModal={() => setIsEditModalOpen(false)}
-        title={'Edit board'}
-        />
+        title={'Edit board'}/>
         </View>
   )
 }

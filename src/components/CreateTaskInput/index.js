@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { View, TextInput, Text, Button, TouchableOpacity } from 'react-native'
 import styles from './styles'
 
+
 const CreateTaskInput = ({ addTask, closeModal }) => {
   const [inputs, setInputes] = useState({
     name: '',
@@ -66,4 +67,5 @@ const CreateTaskInput = ({ addTask, closeModal }) => {
         </View>
   )
 }
+
 export default CreateTaskInput

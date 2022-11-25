@@ -58,7 +58,6 @@ const CreateListInput = ({ addList, closeModal }) => {
                 style={styles.picker}
                 selectedValue={inputs.color}
                 onValueChange={value => inputHandler('color', value)}>
-
                 <Picker.Item label='Please select an option...' value='0' />
                 <Picker.Item label="Fire opal" value="#ee6352ff" />
                 <Picker.Item label="Emerald green" value="#59cd90ff" />
@@ -72,7 +71,6 @@ const CreateListInput = ({ addList, closeModal }) => {
                 <Picker.Item label="corn" value="#f2e94eff" />
             </Picker>
             <Text>{errors.color}</Text>
-
             <TouchableOpacity style={styles.buttonBackground}>
             <Button
               title="Create"
@@ -82,4 +80,5 @@ const CreateListInput = ({ addList, closeModal }) => {
         </View>
   )
 }
+
 export default CreateListInput

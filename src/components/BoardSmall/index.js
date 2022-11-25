@@ -4,10 +4,10 @@ import { Image, View, Text, TouchableOpacity } from 'react-native'
 import  { AntDesign } from '@expo/vector-icons';
 import styles from './styles'
 
+
 const BoardSmall = ({ onEdit, board, navigation, onLongPress, isSelected }) => {
   return (
         <View>
-
         <TouchableOpacity style={styles.editButton} onPress={() => onEdit(board)}>
             <Text style={styles.editText}>Edit</Text>
         </TouchableOpacity>
@@ -33,7 +33,6 @@ const BoardSmall = ({ onEdit, board, navigation, onLongPress, isSelected }) => {
                   source={{ uri: board.thumbnailPhoto }}/>
           </View>
         </TouchableOpacity>
-        
         </View>
   );
 }

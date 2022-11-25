@@ -25,7 +25,6 @@ const Modal = ({
                 <Text style={styles.title} >{title}</Text>
                 {children}
             </View>
-
     </NativeModal>
 )
 

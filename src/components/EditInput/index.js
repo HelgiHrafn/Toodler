@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { View, TextInput, Button, Text, TouchableOpacity } from 'react-native'
 import styles from './styles'
 
+
 const EditBoardInput = ({ original, editFunction, closeModal }) => {
   const [inputs, setInputes] = useState({
     name: original.name,
@@ -64,7 +65,6 @@ const EditBoardInput = ({ original, editFunction, closeModal }) => {
                 value={inputs.thumbnailPhoto}
                 onChangeText={text => inputHandler('thumbnailPhoto', text)} />
             <Text>{errors.thumbnailPhoto}</Text>
-
             <TouchableOpacity style={styles.buttonBackground}>
             <Button
               title="Create"

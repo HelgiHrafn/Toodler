@@ -2,6 +2,7 @@ import React from 'react'
 import Modal from '../Modal'
 import CreateListInput from '../CreateListInput'
 
+
 const AddModal = ({
   isOpen,
   closeModal,

@@ -8,22 +8,24 @@ import AddListModal from '../../components/AddListModal'
 import * as fileService from '../../services/fileService'
 import EditListModal from '../../components/EditListModal'
 
+
 const Board = ({ navigation, route }) => {
   const board = route.params.board
+  
   const lists = data.lists
 
   const [allLists, setAllLists] = useState([...lists])
 
   const showlists = lists.filter(function (element) { return element.boardId == board.id })
-
   // All lists within the board
   const [boardList, setBoardList] = useState([...showlists])
-
   // All selected lists from said board
   const [selectedBoardList, setSelectedBoardList] = useState([])
 
   const [isAddModalOpen, setIsAddModalOpen] = useState(false)
+  
   const [isEditModalOpen, setIsEditModalOpen] = useState(false)
+  
   const [currentEditingList, setCurrentEditingList] = useState()
 
   const addList = async (inputs) => {
@@ -72,7 +74,6 @@ const Board = ({ navigation, route }) => {
           onRemove={() => deleteSelectedLists()}
           hasSelectedLists={selectedBoardList.length > 0 } />
         <View style={[styles.boardBig, styles.coolShadow]}>
-
             <Text style={styles.h2}>{board.name}</Text>
             <FlatList
                 numColumns={1}
@@ -88,22 +89,19 @@ const Board = ({ navigation, route }) => {
                         navigation={navigation}/>
                   )
                 }}
-                keyExtractor={list => list.id}
-            />
+                keyExtractor={list => list.id}/>
         </View>
         <AddListModal
         isOpen={isAddModalOpen}
         closeModal={() => setIsAddModalOpen(false)}
         title={'Create new list!'}
-        addList={addList}
-        />
+        addList={addList}/>
         <EditListModal
         editFunction={editList}
         isOpen={isEditModalOpen}
         original={currentEditingList}
         closeModal={() => setIsEditModalOpen(false)}
-        title={'Edit board'}
-        />
+        title={'Edit board'}/>
         </View>
   )
 }
