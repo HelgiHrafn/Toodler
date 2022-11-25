@@ -29,7 +29,7 @@ const CreateListInput = ({ addList, closeModal }) => {
                 style={styles.picker}
                 selectedValue={inputs.color}
                 onValueChange={value => inputHandler('color', value)}>
-                  
+
                 <Picker.Item label="Fire opal" value="#ee6352ff" />
                 <Picker.Item label="Emerald green" value="#59cd90ff" />
                 <Picker.Item label="Cerulean crayola" value="#3fa7d6ff" />
