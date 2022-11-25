@@ -35,7 +35,7 @@ const CreateBoardInput = ({ addBoard, closeModal }) => {
     }
 
     setErrors(errors)
-    console.log(Object.keys(errors).length)
+
     return Object.keys(errors).length > 0 ? false : true
   }
 
@@ -46,7 +46,7 @@ const CreateBoardInput = ({ addBoard, closeModal }) => {
     }
   }
 
-  const hasErrors = Object.values(errors).some(val => val.length > 0)
+  // const hasErrors = Object.values(errors).some(val => val.length > 0)
 
   return (
         <View>
