@@ -48,6 +48,6 @@ All user inputs are validated when creating a board/list/task.
 
 All user inputs are validated when modifying an existing board/list/task.
 
-User is presented with a choice of colors when creating a new list.
+User is presented with a choice of pre-determined colors when creating a new list.
 
 Tasks can be checked off and stay in their state for the session.
