@@ -28,18 +28,16 @@ const CreateListInput = ({ addList, closeModal }) => {
 
     if (!name) {
       errors.name = 'Name can not be empty'
-      console.log(errors)
     }
-    if (color === '') {
+    if (color === '' || color === '0') {
       errors.color = 'Please select a color from the dropdown menu'
-      console.log(errors)
     }
-
+    
     setErrors(errors)
 
     return Object.keys(errors).length > 0 ? false : true
   }
-
+  
   const register = () => {
     if (validateForm()) {
       addList(inputs)
