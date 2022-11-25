@@ -81,7 +81,7 @@ const Boards = ({ navigation }) => {
         original={currentEditingBoard}
         closeModal={() => setIsEditModalOpen(false)}
         title={'Edit board'}
-        editFunction={editBoard}/>
+        />
         </View>
   )
 }

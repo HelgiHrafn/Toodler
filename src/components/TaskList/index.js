@@ -3,7 +3,7 @@ import { View, Text, TouchableOpacity } from 'react-native'
 import { AntDesign } from '@expo/vector-icons'
 import styles from './styles'
 
-const TaskList = ({ list, navigation, onLongPress, isSelected, lists }) => {
+const TaskList = ({ onEdit, list, navigation, onLongPress, isSelected, lists }) => {
   return (
     <View>
        
@@ -23,7 +23,7 @@ const TaskList = ({ list, navigation, onLongPress, isSelected, lists }) => {
         <Text style={[ { opacity: isSelected ? .5 : 1 }, styles.h3]}>{list.name}</Text>
       </View>
     </TouchableOpacity>
-    <TouchableOpacity style={styles.editButton}>
+    <TouchableOpacity style={styles.editButton} onPress={() => onEdit(list)}>
             <Text style={styles.editText}>Edit</Text>
         </TouchableOpacity>
     </View>

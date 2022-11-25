@@ -6,6 +6,7 @@ import TaskList from '../../components/TaskList'
 import ListToolbar from '../../components/Toolbar/listToolbar'
 import AddListModal from '../../components/AddListModal'
 import * as fileService from '../../services/fileService'
+import EditListModal from '../../components/EditListModal'
 
 const Board = ({ navigation, route }) => {
   const board = route.params.board
@@ -22,6 +23,8 @@ const Board = ({ navigation, route }) => {
   const [selectedBoardList, setSelectedBoardList] = useState([])
 
   const [isAddModalOpen, setIsAddModalOpen] = useState(false)
+  const [isEditModalOpen, setIsEditModalOpen] = useState(false)
+  const [currentEditingList, setCurrentEditingList] = useState()
 
   const addList = async (inputs) => {
     const newList = await fileService.addItem(inputs, allLists)
@@ -30,6 +33,17 @@ const Board = ({ navigation, route }) => {
     boardList.push(newList)
     setAllLists([...allLists, newList])
   }
+
+  const editList = (original, inputs) => {
+    original.name = inputs.name
+    original.color = inputs.color
+    for (let i = 0; i< boardList.length; i++) {
+      if (boardList[i].id == original.id) {
+        boardList[i] = original
+      }
+    }
+  }
+
   const onBoardListLongPress = name => {
     if (selectedBoardList.indexOf(name) !== -1) {
       setSelectedBoardList(selectedBoardList.filter(boardList => boardList !== name))
@@ -66,6 +80,7 @@ const Board = ({ navigation, route }) => {
                 renderItem={({ item }) => {
                   return (
                         <TaskList
+                        onEdit={(list) => {setIsEditModalOpen(true); setCurrentEditingList(list)}}
                         list={item}
                         lists={boardList}
                         onLongPress={name => onBoardListLongPress(name)}
@@ -81,6 +96,13 @@ const Board = ({ navigation, route }) => {
         closeModal={() => setIsAddModalOpen(false)}
         title={'Create new list!'}
         addList={addList}
+        />
+        <EditListModal
+        editFunction={editList}
+        isOpen={isEditModalOpen}
+        original={currentEditingList}
+        closeModal={() => setIsEditModalOpen(false)}
+        title={'Edit board'}
         />
         </View>
   )
