@@ -27,11 +27,9 @@ const EditListInput = ({ original, editFunction, closeModal }) => {
 
     if (!name) {
       errors.name = 'Name can not be empty'
-      console.log(errors)
     }
-    if (color === '') {
+    if (color === '' || color === '0') {
       errors.color = 'Please select a color from the dropdown menu'
-      console.log(errors)
     }
 
     setErrors(errors)
