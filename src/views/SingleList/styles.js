@@ -35,6 +35,6 @@ export default StyleSheet.create({
   button: {
     width: 200,
     padding: 10,
-    marginTop: 7,
+    marginTop: 7
   }
 })
