@@ -3,9 +3,9 @@ import { View, TouchableHighlight, Text, Image} from 'react-native'
 import logo from '../../resources/logo.png'
 import styles from './styles'
 
-const TaskToolbar = ({ hasSelectedTasks, onRemove }) => (
+const TaskToolbar = ({ hasSelectedTasks, onRemove, onAdd }) => (
     <View style={styles.toolbar}>
-        <TouchableHighlight style={styles.toolbarAction}>
+        <TouchableHighlight style={styles.toolbarAction} onPress={onAdd}>
             <Text style={styles.toolbarActionText}>Create Task</Text>
         </TouchableHighlight>
         <Image style={styles.logo} source={logo} />
