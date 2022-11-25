@@ -4,11 +4,11 @@ import { Image, View, Text, TouchableOpacity } from 'react-native'
 import  { AntDesign } from '@expo/vector-icons';
 import styles from './styles'
 
-const BoardSmall = ({ board, navigation, onLongPress, isSelected }) => {
+const BoardSmall = ({ onEdit, board, navigation, onLongPress, isSelected }) => {
   return (
         <View>
 
-        <TouchableOpacity style={styles.editButton}>
+        <TouchableOpacity style={styles.editButton} onPress={() => onEdit(board)}>
             <Text style={styles.editText}>Edit</Text>
         </TouchableOpacity>
         <TouchableOpacity
