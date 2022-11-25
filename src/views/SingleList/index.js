@@ -7,6 +7,7 @@ import TaskToolbar from '../../components/Toolbar/taskToolbar'
 import { Picker } from '@react-native-picker/picker'
 import AddTaskModal from '../../components/AddTaskModal'
 import * as fileService from '../../services/fileService'
+import EditTaskModal from '../../components/EditTaskModal'
 
 const List = ({ navigation, route }) => {
   const list = route.params.list
@@ -22,6 +23,12 @@ const List = ({ navigation, route }) => {
   // All selected tasks from said list
   const [selectedTaskList, setSelelectedTaskList] = useState([])
   const [isAddModalOpen, setIsAddModalOpen] = useState(false)
+
+  const [isEditTaskModalOpen, setIsEditTaskModalOpen] = useState(false)
+  const [currentEditingTask, setCurrentEditingTask] = useState()
+
+
+
   const onTaskListLongPress = name => {
     if (selectedTaskList.indexOf(name) !== -1) {
       setSelelectedTaskList(selectedTaskList.filter(taskList => taskList !== name))
@@ -36,6 +43,17 @@ const List = ({ navigation, route }) => {
     data.tasks.push(newTask)
     taskList.push(newTask)
     setAllTasks([...allTasks, newTask])
+  }
+
+  const editTask = (original, inputs) => {
+    original.name = inputs.name
+    original.description = inputs.description
+    for (let i=1; i< tasks.length; i++) {
+      if (tasks.id == original.id) {
+          tasks.splice(i, 1)
+          tasks.push(original)
+      }
+    }
   }
 
   const deleteSelectedTasks = () => {
@@ -110,6 +128,7 @@ const List = ({ navigation, route }) => {
                   return (
                         <Task
                         task={item}
+                        onTaskEdit={(task) => {setIsEditTaskModalOpen(true); setCurrentEditingTask(task)}}
                         onLongPress={name => onTaskListLongPress(name)}
                         isSelected={selectedTaskList.indexOf(item.name) !== -1}
                         navigation={navigation}/>
@@ -124,6 +143,12 @@ const List = ({ navigation, route }) => {
         title={'Create new list!'}
         addTask={addTask}
         />
+        <EditTaskModal
+        isOpen={isEditTaskModalOpen}
+        original={currentEditingTask}
+        closeModal={() => setIsEditTaskModalOpen(false)}
+        title={'Edit task'}
+        editFunction={editTask}/>
         </View>
   )
 }

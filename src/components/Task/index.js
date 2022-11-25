@@ -4,7 +4,7 @@ import { View, Text, TouchableOpacity, Switch } from 'react-native'
 import CheckBox from 'expo-checkbox';
 import styles from './styles'
 
-const Task = ({ task, navigation, onLongPress, isSelected }) => {
+const Task = ({ task, navigation, onLongPress, isSelected, onTaskEdit }) => {
   const [toggleCheckBox, setToggleCheckBox] = useState(task.isFinished)
 
   if (task.isFinished !== toggleCheckBox) {
@@ -13,6 +13,8 @@ const Task = ({ task, navigation, onLongPress, isSelected }) => {
 
   return (
     <View>
+
+
     <TouchableOpacity
       onLongPress={() => onLongPress(task.name)} 
       style={styles.touchable}>
@@ -32,9 +34,9 @@ const Task = ({ task, navigation, onLongPress, isSelected }) => {
       </View>
     </View>
     </TouchableOpacity>
-     <TouchableOpacity style={styles.editButton}>
-     <Text style={styles.editText}>Edit</Text>
- </TouchableOpacity>
+    <TouchableOpacity style={styles.editButton} onPress={() => onTaskEdit(task)}>
+    <Text style={styles.editText}>Edit</Text>
+    </TouchableOpacity>
  </View>
   )
 }
