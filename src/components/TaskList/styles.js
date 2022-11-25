@@ -1,4 +1,6 @@
 import { StyleSheet } from 'react-native'
+import { emerald } from '../../styles/colors'
+
 export default StyleSheet.create({
   h3: {
     fontSize: 25,
@@ -24,5 +26,16 @@ export default StyleSheet.create({
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center'
+  },
+  editButton: {
+    backgroundColor: emerald,
+    borderRadius: 7,
+    alignSelf: 'flex-end',
+    paddingHorizontal: 5,
+    paddingVertical: 2,
+    margin: 10
+  },
+  editText: {
+    fontFamily: 'Futura'
   }
 })

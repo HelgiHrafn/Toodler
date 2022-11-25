@@ -12,6 +12,7 @@ const Task = ({ task, navigation, onLongPress, isSelected }) => {
   };
 
   return (
+    <View>
     <TouchableOpacity
       onLongPress={() => onLongPress(task.name)} 
       style={styles.touchable}>
@@ -31,6 +32,10 @@ const Task = ({ task, navigation, onLongPress, isSelected }) => {
       </View>
     </View>
     </TouchableOpacity>
+     <TouchableOpacity style={styles.editButton}>
+     <Text style={styles.editText}>Edit</Text>
+ </TouchableOpacity>
+ </View>
   )
 }
 

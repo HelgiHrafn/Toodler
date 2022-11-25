@@ -6,6 +6,11 @@ import styles from './styles'
 
 const BoardSmall = ({ board, navigation, onLongPress, isSelected }) => {
   return (
+        <View>
+
+        <TouchableOpacity style={styles.editButton}>
+            <Text style={styles.editText}>Edit</Text>
+        </TouchableOpacity>
         <TouchableOpacity
           style={styles.touchable} 
           onPress={() => navigation.navigate('Board', { board })}
@@ -28,6 +33,8 @@ const BoardSmall = ({ board, navigation, onLongPress, isSelected }) => {
                   source={{ uri: board.thumbnailPhoto }}/>
           </View>
         </TouchableOpacity>
+        
+        </View>
   );
 }
 

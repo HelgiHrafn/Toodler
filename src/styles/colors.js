@@ -1,4 +1,3 @@
-export const sexualBlue = '#284B63'
 
 /* Possible pallette 1: */
 export const uranianBlue = '#a3d9ffff'

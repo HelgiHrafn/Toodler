@@ -1,4 +1,6 @@
 import { StyleSheet } from 'react-native'
+import { emerald } from '../../styles/colors'
+
 export default StyleSheet.create({
   h3: {
     fontSize: 18,
@@ -42,5 +44,16 @@ export default StyleSheet.create({
   checkbox: {
     transform: [{ scaleX: 1.5 }, { scaleY: 1.5 }],
     margin: 10
+  },
+  editButton: {
+    backgroundColor: emerald,
+    borderRadius: 7,
+    alignSelf: 'flex-end',
+    paddingHorizontal: 5,
+    paddingVertical: 2,
+    margin: 10
+  },
+  editText: {
+    fontFamily: 'Futura'
   }
 })

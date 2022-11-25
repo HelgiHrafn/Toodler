@@ -5,6 +5,8 @@ import styles from './styles'
 
 const TaskList = ({ list, navigation, onLongPress, isSelected, lists }) => {
   return (
+    <View>
+       
     <TouchableOpacity 
       onLongPress={() => onLongPress(list.name)}
       style={styles.touchable}
@@ -21,6 +23,10 @@ const TaskList = ({ list, navigation, onLongPress, isSelected, lists }) => {
         <Text style={[ { opacity: isSelected ? .5 : 1 }, styles.h3]}>{list.name}</Text>
       </View>
     </TouchableOpacity>
+    <TouchableOpacity style={styles.editButton}>
+            <Text style={styles.editText}>Edit</Text>
+        </TouchableOpacity>
+    </View>
   );
 }
 
