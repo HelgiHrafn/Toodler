@@ -18,7 +18,7 @@ export default StyleSheet.create({
     fontSize: 20
   },
   buttonBackground: {
-    backgroundColor: emerald,
+    // backgroundColor: emerald,
     width: '100%',
     alignSelf: 'flex-end',
     padding: 4,

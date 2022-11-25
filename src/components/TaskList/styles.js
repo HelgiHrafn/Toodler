@@ -37,5 +37,9 @@ export default StyleSheet.create({
   },
   editText: {
     fontFamily: 'Futura'
+  },
+  touchable: {
+    activeOpacity: 0.6,
+    underlayColor: '#FFF'
   }
 })
