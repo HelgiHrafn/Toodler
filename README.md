@@ -3,7 +3,7 @@
 
 ### Developed for IOS 16
 
-### Install dependancies
+### Install dependencies
 
 `npm install`
 
