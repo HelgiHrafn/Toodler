@@ -59,7 +59,7 @@ const EditTaskInput = ({ closeModal, original, editFunction }) => {
             <Text>{errors.description}</Text>
             <TouchableOpacity style={styles.buttonBackground}>
             <Button
-              title="Create"
+              title="Edit"
               onPress={() => { register(); validateForm() }}
               style={styles.button}/>
             </TouchableOpacity>
