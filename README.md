@@ -53,3 +53,15 @@ All user inputs are validated when modifying an existing board/list/task.
 User is presented with a choice of pre-determined colors when creating a new list.
 
 Tasks can be checked off and stay in their state for the session.
+
+### Useful links
+
+Url which can be used as an image when creating a board:
+
+https://hips.hearstapps.com/hmg-prod/images/701/p-1-rambo-first-blood-build-muscle-on-the-sly-1515614402.jpg
+
+Link to our github repo:
+
+https://github.com/HelgiHrafn/Toodler
+
+
