@@ -54,6 +54,8 @@ User is presented with a choice of pre-determined colors when creating a new lis
 
 Tasks can be checked off and stay in their state for the session.
 
+Logo designed for the app. Visibe on startup loading page and also on the toolbar inside the app.
+
 ### Useful links
 
 Url which can be used as an image when creating a board:
