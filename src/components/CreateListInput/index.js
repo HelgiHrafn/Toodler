@@ -59,16 +59,16 @@ const CreateListInput = ({ addList, closeModal }) => {
                 selectedValue={inputs.color}
                 onValueChange={value => inputHandler('color', value)}>
                 <Picker.Item label='Please select an option...' value='0' />
-                <Picker.Item label="Fire opal" value="#ee6352ff" />
-                <Picker.Item label="Emerald green" value="#59cd90ff" />
-                <Picker.Item label="Cerulean crayola" value="#3fa7d6ff" />
+                <Picker.Item label="Fire Opal" value="#ee6352ff" />
+                <Picker.Item label="Emerald Green" value="#59cd90ff" />
+                <Picker.Item label="Cerulean Crayola" value="#3fa7d6ff" />
                 <Picker.Item label="Maximum Yellow Red" value="#fac05eff" />
                 <Picker.Item label="Vivid Tangerine" value="#f79d84ff" />
-                <Picker.Item label="uranianBlue" value="#a3d9ffff" />
-                <Picker.Item label="chineseViolet" value="#7e6b8fff" />
-                <Picker.Item label="celadon" value="#96e6b3ff" />
-                <Picker.Item label="amaranth" value="#da3e52ff" />
-                <Picker.Item label="corn" value="#f2e94eff" />
+                <Picker.Item label="Uranian Blue" value="#a3d9ffff" />
+                <Picker.Item label="Chineese Violet" value="#7e6b8fff" />
+                <Picker.Item label="Celadon" value="#96e6b3ff" />
+                <Picker.Item label="Amaranth" value="#da3e52ff" />
+                <Picker.Item label="Corn" value="#f2e94eff" />
             </Picker>
             <Text>{errors.color}</Text>
             <TouchableOpacity style={styles.buttonBackground}>
