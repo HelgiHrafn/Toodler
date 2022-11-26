@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { View, Text, FlatList, TouchableOpacity, Button } from 'react-native'
+import { View, Text, FlatList, TouchableOpacity } from 'react-native'
 import data from '../../resources/data.json'
 import styles from './styles'
 import Task from '../../components/Task'
@@ -9,28 +9,27 @@ import AddTaskModal from '../../components/AddTaskModal'
 import * as fileService from '../../services/fileService'
 import EditTaskModal from '../../components/EditTaskModal'
 
-
 const List = ({ navigation, route }) => {
   const list = route.params.list
-  
+
   const lists = route.params.lists
   // const onTaskChangeListPress = route.params.onTaskChangeList
   const tasks = data.tasks
-  
+
   const [allTasks, setAllTasks] = useState([...tasks])
 
   const showTasks = tasks.filter(function (element) { return element.listId == list.id })
   // All tasks within a list
   const [taskList, setTaskList] = useState([...showTasks])
-  
+
   const [selectedDropdownMove, setSelectedDropdownMove] = useState(null)
   // All selected tasks from said list
   const [selectedTaskList, setSelelectedTaskList] = useState([])
-  
+
   const [isAddModalOpen, setIsAddModalOpen] = useState(false)
 
   const [isEditTaskModalOpen, setIsEditTaskModalOpen] = useState(false)
-  
+
   const [currentEditingTask, setCurrentEditingTask] = useState()
 
   const onTaskListLongPress = name => {
@@ -52,10 +51,10 @@ const List = ({ navigation, route }) => {
   const editTask = (original, inputs) => {
     original.name = inputs.name
     original.description = inputs.description
-    for (let i=1; i< tasks.length; i++) {
+    for (let i = 1; i < tasks.length; i++) {
       if (tasks.id == original.id) {
-          tasks.splice(i, 1)
-          tasks.push(original)
+        tasks.splice(i, 1)
+        tasks.push(original)
       }
     }
   }
@@ -131,7 +130,7 @@ const List = ({ navigation, route }) => {
                   return (
                         <Task
                         task={item}
-                        onTaskEdit={(task) => {setIsEditTaskModalOpen(true); setCurrentEditingTask(task)}}
+                        onTaskEdit={(task) => { setIsEditTaskModalOpen(true); setCurrentEditingTask(task) }}
                         onLongPress={name => onTaskListLongPress(name)}
                         isSelected={selectedTaskList.indexOf(item.name) !== -1}
                         navigation={navigation}/>

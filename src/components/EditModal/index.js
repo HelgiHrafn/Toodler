@@ -2,7 +2,6 @@ import React from 'react'
 import Modal from '../Modal'
 import EditBoardInput from '../EditInput'
 
-
 const EditModal = ({
   isOpen,
   closeModal,

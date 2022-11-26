@@ -8,10 +8,9 @@ import AddListModal from '../../components/AddListModal'
 import * as fileService from '../../services/fileService'
 import EditListModal from '../../components/EditListModal'
 
-
 const Board = ({ navigation, route }) => {
   const board = route.params.board
-  
+
   const lists = data.lists
 
   const [allLists, setAllLists] = useState([...lists])
@@ -23,9 +22,9 @@ const Board = ({ navigation, route }) => {
   const [selectedBoardList, setSelectedBoardList] = useState([])
 
   const [isAddModalOpen, setIsAddModalOpen] = useState(false)
-  
+
   const [isEditModalOpen, setIsEditModalOpen] = useState(false)
-  
+
   const [currentEditingList, setCurrentEditingList] = useState()
 
   const addList = async (inputs) => {
@@ -39,7 +38,7 @@ const Board = ({ navigation, route }) => {
   const editList = (original, inputs) => {
     original.name = inputs.name
     original.color = inputs.color
-    for (let i = 0; i< boardList.length; i++) {
+    for (let i = 0; i < boardList.length; i++) {
       if (boardList[i].id == original.id) {
         boardList[i] = original
       }
@@ -81,7 +80,7 @@ const Board = ({ navigation, route }) => {
                 renderItem={({ item }) => {
                   return (
                         <TaskList
-                        onEdit={(list) => {setIsEditModalOpen(true); setCurrentEditingList(list)}}
+                        onEdit={(list) => { setIsEditModalOpen(true); setCurrentEditingList(list) }}
                         list={item}
                         lists={boardList}
                         onLongPress={name => onBoardListLongPress(name)}

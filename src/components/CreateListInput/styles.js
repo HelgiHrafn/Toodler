@@ -1,5 +1,4 @@
 import { StyleSheet, Dimensions } from 'react-native'
-import { emerald } from '../../styles/colors'
 const { width: winWidth } = Dimensions.get('window')
 
 export default StyleSheet.create({
@@ -18,7 +17,6 @@ export default StyleSheet.create({
     fontSize: 20
   },
   buttonBackground: {
-    // backgroundColor: emerald,
     width: '100%',
     alignSelf: 'flex-end',
     padding: 4,

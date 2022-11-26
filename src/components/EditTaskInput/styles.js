@@ -1,5 +1,4 @@
 import { StyleSheet, Dimensions } from 'react-native'
-import { emerald } from '../../styles/colors'
 const { width: winWidth } = Dimensions.get('window')
 
 export default StyleSheet.create({

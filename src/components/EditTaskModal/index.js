@@ -2,7 +2,6 @@ import React from 'react'
 import Modal from '../Modal'
 import EditTaskInput from '../EditTaskInput'
 
-
 const EditTaskModal = ({
   isOpen,
   closeModal,

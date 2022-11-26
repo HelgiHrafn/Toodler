@@ -8,7 +8,6 @@ import AddModal from '../../components/AddModal'
 import * as fileService from '../../services/fileService'
 import EditModal from '../../components/EditModal'
 
-
 const Boards = ({ navigation }) => {
   // All boards within the application directory
   const [boardSmall, setBoardSmall] = useState(data.boards)
@@ -16,9 +15,9 @@ const Boards = ({ navigation }) => {
   const [selectedBoardSmall, setSelectedBoardSmall] = useState([])
 
   const [isAddModalOpen, setIsAddModalOpen] = useState(false)
-  
+
   const [isEditModalOpen, setIsEditModalOpen] = useState(false)
-  
+
   const [currentEditingBoard, setCurrentEditingBoard] = useState()
 
   const onBoardSmallLongPress = name => {
@@ -39,7 +38,7 @@ const Boards = ({ navigation }) => {
     original.name = inputs.name
     original.description = inputs.description
     original.thumbnailPhoto = inputs.thumbnailPhoto
-    for (let i=1; i< boardSmall.length; i++) {
+    for (let i = 1; i < boardSmall.length; i++) {
       if (boardSmall.id == original.id) {
         boardSmall.splice(i, 1)
         setBoardSmall([...boardSmall, original])
@@ -66,7 +65,7 @@ const Boards = ({ navigation }) => {
             onRemove={() => deleteSelectedBoards()}
             hasSelectedBoards={selectedBoardSmall.length > 0} />
             <BoardList
-              onEdit={(board) => {setIsEditModalOpen(true); setCurrentEditingBoard(board)}}
+              onEdit={(board) => { setIsEditModalOpen(true); setCurrentEditingBoard(board) }}
               onLongPress={name => onBoardSmallLongPress(name)}
               selectedBoardSmall={selectedBoardSmall}
               boards={boardSmall} navigation={navigation}/>

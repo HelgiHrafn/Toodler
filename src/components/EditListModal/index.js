@@ -2,7 +2,6 @@ import React from 'react'
 import Modal from '../Modal'
 import EditListInput from '../EditListInput'
 
-
 const EditListModal = ({
   isOpen,
   closeModal,

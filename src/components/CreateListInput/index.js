@@ -3,7 +3,6 @@ import { View, TextInput, Text, Button, TouchableOpacity } from 'react-native'
 import styles from './styles'
 import { Picker } from '@react-native-picker/picker'
 
-
 const CreateListInput = ({ addList, closeModal }) => {
   const [inputs, setInputes] = useState({
     name: '',
@@ -32,12 +31,12 @@ const CreateListInput = ({ addList, closeModal }) => {
     if (color === '' || color === '0') {
       errors.color = 'Please select a color from the dropdown menu'
     }
-    
+
     setErrors(errors)
 
-    return Object.keys(errors).length > 0 ? false : true
+    return !(Object.keys(errors).length > 0)
   }
-  
+
   const register = () => {
     if (validateForm()) {
       addList(inputs)

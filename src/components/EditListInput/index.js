@@ -3,7 +3,6 @@ import { View, TextInput, Text, Button, TouchableOpacity } from 'react-native'
 import { Picker } from '@react-native-picker/picker'
 import styles from './styles'
 
-
 const EditListInput = ({ original, editFunction, closeModal }) => {
   const [inputs, setInputes] = useState({
     name: original.name,
@@ -35,7 +34,7 @@ const EditListInput = ({ original, editFunction, closeModal }) => {
 
     setErrors(errors)
 
-    return Object.keys(errors).length > 0 ? false : true
+    return !(Object.keys(errors).length > 0)
   }
 
   const register = () => {

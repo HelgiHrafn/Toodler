@@ -1,9 +1,8 @@
 /* eslint-disable react/prop-types */
 import React from 'react'
 import { Image, View, Text, TouchableOpacity } from 'react-native'
-import  { AntDesign } from '@expo/vector-icons';
+import { AntDesign } from '@expo/vector-icons'
 import styles from './styles'
-
 
 const BoardSmall = ({ onEdit, board, navigation, onLongPress, isSelected }) => {
   return (
@@ -12,17 +11,15 @@ const BoardSmall = ({ onEdit, board, navigation, onLongPress, isSelected }) => {
             <Text style={styles.editText}>Edit</Text>
         </TouchableOpacity>
         <TouchableOpacity
-          style={styles.touchable} 
+          style={styles.touchable}
           onPress={() => navigation.navigate('Board', { board })}
           onLongPress={() => onLongPress(board.name)}>
           {
               isSelected
-                ?
-                <AntDesign name="checkcircleo"/>
-                :
-                <></>
+                ? <AntDesign name="checkcircleo"/>
+                : <></>
           }
-          <View style={[{ opacity: isSelected ? .5 : 1 }, styles.boardSmall, styles.coolShadow]}>  
+          <View style={[{ opacity: isSelected ? 0.5 : 1 }, styles.boardSmall, styles.coolShadow]}>
               <View style={styles.textWrapper}>
                 <Text style={styles.name}>{board.name}</Text>
                 <Text style={styles.description}>{board.description}</Text>
@@ -34,7 +31,7 @@ const BoardSmall = ({ onEdit, board, navigation, onLongPress, isSelected }) => {
           </View>
         </TouchableOpacity>
         </View>
-  );
+  )
 }
 
-export default BoardSmall;
+export default BoardSmall

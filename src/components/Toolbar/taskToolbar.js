@@ -1,8 +1,7 @@
 import React from 'react'
-import { View, TouchableHighlight, Text, Image} from 'react-native'
+import { View, TouchableHighlight, Text, Image } from 'react-native'
 import logo from '../../resources/logo.png'
 import styles from './styles'
-
 
 const TaskToolbar = ({ hasSelectedTasks, onRemove, onAdd }) => (
     <View style={styles.toolbar}>
@@ -12,9 +11,9 @@ const TaskToolbar = ({ hasSelectedTasks, onRemove, onAdd }) => (
         <Image style={styles.logo} source={logo} />
         <TouchableHighlight
             style={styles.toolbarAction}
-            onPress={onRemove} 
+            onPress={onRemove}
             disabled={!hasSelectedTasks}>
-            <Text style={[styles.toolbarActionText, { color: !hasSelectedTasks ? 'gray' : 'black'}]}>Delete</Text>
+            <Text style={[styles.toolbarActionText, { color: !hasSelectedTasks ? 'gray' : 'black' }]}>Delete</Text>
         </TouchableHighlight>
     </View>
 )

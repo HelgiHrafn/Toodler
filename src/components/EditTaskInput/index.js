@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import { View, TextInput, Text, Button, TouchableOpacity } from 'react-native'
 import styles from './styles'
 
-
 const EditTaskInput = ({ closeModal, original, editFunction }) => {
   const [inputs, setInputes] = useState({
     name: original.name,
@@ -34,7 +33,7 @@ const EditTaskInput = ({ closeModal, original, editFunction }) => {
 
     setErrors(errors)
 
-    return Object.keys(errors).length > 0 ? false : true
+    return !(Object.keys(errors).length > 0)
   }
 
   const register = () => {
