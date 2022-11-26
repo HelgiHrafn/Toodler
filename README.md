@@ -1,6 +1,8 @@
 # Toodler
 ## Group 9 - Guðmundur, Helgi & Kristján
 
+### Developed for IOS 16
+
 ### Install dependancies
 
 `npm install`
